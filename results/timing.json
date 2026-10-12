@@ -1,0 +1,17 @@
+{
+  "dev": {
+    "Rule-based": 36.64,
+    "FST": 33.95,
+    "Rule-based (no guesser)": 40.52
+  },
+  "test": {
+    "Rule-based": 35.43,
+    "FST": 33.06,
+    "Rule-based (no guesser)": 32.26
+  },
+  "all": {
+    "Rule-based": 38.95,
+    "FST": 29.96,
+    "Rule-based (no guesser)": 31.31
+  }
+}

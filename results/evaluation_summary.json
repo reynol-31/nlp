@@ -1,0 +1,3058 @@
+{
+  "dev": {
+    "split": "dev",
+    "config": {
+      "split": "dev",
+      "analyzers": [
+        "Rule-based",
+        "FST",
+        "Rule-based (no guesser)"
+      ],
+      "primary_metric": "exact-analysis top-1 accuracy",
+      "zero_division": "0.0 (flagged as undefined)"
+    },
+    "dataset": {
+      "items": 170,
+      "analyses": 259,
+      "ambiguous_items": 58,
+      "by_split": {
+        "dev": 170
+      },
+      "by_category": {
+        "noun_regular": {
+          "dev": 30,
+          "test": 0
+        },
+        "noun_irregular": {
+          "dev": 17,
+          "test": 0
+        },
+        "pronoun": {
+          "dev": 9,
+          "test": 0
+        },
+        "adjective": {
+          "dev": 11,
+          "test": 0
+        },
+        "verb_regular": {
+          "dev": 53,
+          "test": 0
+        },
+        "verb_irregular": {
+          "dev": 25,
+          "test": 0
+        },
+        "lexical_ambiguity": {
+          "dev": 4,
+          "test": 0
+        },
+        "spelling_variant": {
+          "dev": 2,
+          "test": 0
+        },
+        "oov": {
+          "dev": 17,
+          "test": 0
+        },
+        "out_of_scope": {
+          "dev": 2,
+          "test": 0
+        }
+      },
+      "lemma_groups": {
+        "dev": 72
+      },
+      "group_overlap_between_splits": [],
+      "items_sharing_normalized_form": 2
+    },
+    "metrics": {
+      "Rule-based": {
+        "n_items": 170,
+        "exact_top1": {
+          "accuracy": 0.964706,
+          "precision": 0.970414,
+          "recall": 0.964706,
+          "f1": 0.967552,
+          "correct": 164,
+          "answered": 169,
+          "unknown": 1,
+          "errors": 6,
+          "total": 170,
+          "accuracy_defined": true,
+          "precision_defined": true
+        },
+        "lemma_top1": {
+          "accuracy": 0.970588,
+          "precision": 0.976331,
+          "recall": 0.970588,
+          "f1": 0.973451,
+          "correct": 165,
+          "answered": 169,
+          "unknown": 1,
+          "errors": 5,
+          "total": 170,
+          "accuracy_defined": true,
+          "precision_defined": true
+        },
+        "analysis_set": {
+          "precision": 0.891228,
+          "recall": 0.980695,
+          "f1": 0.933824,
+          "tp": 254,
+          "fp": 31,
+          "fn": 5,
+          "precision_defined": true,
+          "recall_defined": true,
+          "n_pred": 285,
+          "n_gold": 259
+        },
+        "feature_micro": {
+          "precision": 0.988542,
+          "recall": 0.985462,
+          "f1": 0.986999,
+          "tp": 949,
+          "fp": 11,
+          "fn": 14,
+          "precision_defined": true,
+          "recall_defined": true
+        },
+        "feature_per_feature": {
+          "lemma": {
+            "precision": 0.976331,
+            "recall": 0.970588,
+            "f1": 0.973451,
+            "tp": 165,
+            "fp": 4,
+            "fn": 5,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 170
+          },
+          "pos": {
+            "precision": 0.982249,
+            "recall": 0.976471,
+            "f1": 0.979351,
+            "tp": 166,
+            "fp": 3,
+            "fn": 4,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 170
+          },
+          "verbform": {
+            "precision": 0.988889,
+            "recall": 0.978022,
+            "f1": 0.983425,
+            "tp": 89,
+            "fp": 1,
+            "fn": 2,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 91
+          },
+          "tense": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "tp": 26,
+            "fp": 0,
+            "fn": 0,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 26
+          },
+          "aspect": {
+            "precision": 1.0,
+            "recall": 0.976744,
+            "f1": 0.988235,
+            "tp": 42,
+            "fp": 0,
+            "fn": 1,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 43
+          },
+          "mood": {
+            "precision": 0.97561,
+            "recall": 1.0,
+            "f1": 0.987654,
+            "tp": 40,
+            "fp": 1,
+            "fn": 0,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 40
+          },
+          "person": {
+            "precision": 0.978261,
+            "recall": 1.0,
+            "f1": 0.989011,
+            "tp": 45,
+            "fp": 1,
+            "fn": 0,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 45
+          },
+          "gender": {
+            "precision": 1.0,
+            "recall": 0.992537,
+            "f1": 0.996255,
+            "tp": 133,
+            "fp": 0,
+            "fn": 1,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 134
+          },
+          "number": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "tp": 160,
+            "fp": 0,
+            "fn": 0,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 160
+          },
+          "case": {
+            "precision": 0.988095,
+            "recall": 0.988095,
+            "f1": 0.988095,
+            "tp": 83,
+            "fp": 1,
+            "fn": 1,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 84
+          }
+        },
+        "pos_confusion": {
+          "labels": [
+            "NOUN",
+            "PRON",
+            "ADJ",
+            "VERB",
+            "AUX",
+            "UNKNOWN"
+          ],
+          "matrix": [
+            [
+              56,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              9,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              12,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0,
+              82,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              7,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "pos_per_class": {
+          "NOUN": {
+            "precision": 0.965517,
+            "recall": 0.982456,
+            "f1": 0.973913,
+            "support": 57
+          },
+          "PRON": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 9
+          },
+          "ADJ": {
+            "precision": 1.0,
+            "recall": 0.923077,
+            "f1": 0.96,
+            "support": 13
+          },
+          "VERB": {
+            "precision": 0.987952,
+            "recall": 0.97619,
+            "f1": 0.982036,
+            "support": 84
+          },
+          "AUX": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 7
+          }
+        },
+        "error_types": {
+          "CORRECT": 164,
+          "UNKNOWN": 1,
+          "WRONG_POS": 3,
+          "WRONG_LEMMA": 2,
+          "WRONG_FEATURES": 0
+        },
+        "guessed": 18,
+        "ambiguous_predictions": 71,
+        "by_category": {
+          "noun_regular": {
+            "total": 30,
+            "correct": 30,
+            "answered": 30
+          },
+          "noun_irregular": {
+            "total": 17,
+            "correct": 17,
+            "answered": 17
+          },
+          "pronoun": {
+            "total": 9,
+            "correct": 9,
+            "answered": 9
+          },
+          "adjective": {
+            "total": 11,
+            "correct": 11,
+            "answered": 11
+          },
+          "verb_regular": {
+            "total": 53,
+            "correct": 53,
+            "answered": 53
+          },
+          "verb_irregular": {
+            "total": 25,
+            "correct": 25,
+            "answered": 25
+          },
+          "lexical_ambiguity": {
+            "total": 4,
+            "correct": 4,
+            "answered": 4
+          },
+          "spelling_variant": {
+            "total": 2,
+            "correct": 2,
+            "answered": 2
+          },
+          "oov": {
+            "total": 17,
+            "correct": 13,
+            "answered": 17
+          },
+          "out_of_scope": {
+            "total": 2,
+            "correct": 0,
+            "answered": 1
+          }
+        }
+      },
+      "FST": {
+        "n_items": 170,
+        "exact_top1": {
+          "accuracy": 0.888235,
+          "precision": 1.0,
+          "recall": 0.888235,
+          "f1": 0.94081,
+          "correct": 151,
+          "answered": 151,
+          "unknown": 19,
+          "errors": 19,
+          "total": 170,
+          "accuracy_defined": true,
+          "precision_defined": true
+        },
+        "lemma_top1": {
+          "accuracy": 0.888235,
+          "precision": 1.0,
+          "recall": 0.888235,
+          "f1": 0.94081,
+          "correct": 151,
+          "answered": 151,
+          "unknown": 19,
+          "errors": 19,
+          "total": 170,
+          "accuracy_defined": true,
+          "precision_defined": true
+        },
+        "analysis_set": {
+          "precision": 1.0,
+          "recall": 0.899614,
+          "f1": 0.947154,
+          "tp": 233,
+          "fp": 0,
+          "fn": 26,
+          "precision_defined": true,
+          "recall_defined": true,
+          "n_pred": 233,
+          "n_gold": 259
+        },
+        "feature_micro": {
+          "precision": 1.0,
+          "recall": 0.898235,
+          "f1": 0.946389,
+          "tp": 865,
+          "fp": 0,
+          "fn": 98,
+          "precision_defined": true,
+          "recall_defined": true
+        },
+        "feature_per_feature": {
+          "lemma": {
+            "precision": 1.0,
+            "recall": 0.888235,
+            "f1": 0.94081,
+            "tp": 151,
+            "fp": 0,
+            "fn": 19,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 170
+          },
+          "pos": {
+            "precision": 1.0,
+            "recall": 0.888235,
+            "f1": 0.94081,
+            "tp": 151,
+            "fp": 0,
+            "fn": 19,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 170
+          },
+          "verbform": {
+            "precision": 1.0,
+            "recall": 0.912088,
+            "f1": 0.954023,
+            "tp": 83,
+            "fp": 0,
+            "fn": 8,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 91
+          },
+          "tense": {
+            "precision": 1.0,
+            "recall": 0.961538,
+            "f1": 0.980392,
+            "tp": 25,
+            "fp": 0,
+            "fn": 1,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 26
+          },
+          "aspect": {
+            "precision": 1.0,
+            "recall": 0.930233,
+            "f1": 0.963855,
+            "tp": 40,
+            "fp": 0,
+            "fn": 3,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 43
+          },
+          "mood": {
+            "precision": 1.0,
+            "recall": 0.95,
+            "f1": 0.974359,
+            "tp": 38,
+            "fp": 0,
+            "fn": 2,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 40
+          },
+          "person": {
+            "precision": 1.0,
+            "recall": 0.955556,
+            "f1": 0.977273,
+            "tp": 43,
+            "fp": 0,
+            "fn": 2,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 45
+          },
+          "gender": {
+            "precision": 1.0,
+            "recall": 0.88806,
+            "f1": 0.940711,
+            "tp": 119,
+            "fp": 0,
+            "fn": 15,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 134
+          },
+          "number": {
+            "precision": 1.0,
+            "recall": 0.9,
+            "f1": 0.947368,
+            "tp": 144,
+            "fp": 0,
+            "fn": 16,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 160
+          },
+          "case": {
+            "precision": 1.0,
+            "recall": 0.845238,
+            "f1": 0.916129,
+            "tp": 71,
+            "fp": 0,
+            "fn": 13,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 84
+          }
+        },
+        "pos_confusion": {
+          "labels": [
+            "NOUN",
+            "PRON",
+            "ADJ",
+            "VERB",
+            "AUX",
+            "UNKNOWN"
+          ],
+          "matrix": [
+            [
+              47,
+              0,
+              0,
+              0,
+              0,
+              10
+            ],
+            [
+              0,
+              9,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              12,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              76,
+              0,
+              8
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              7,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "pos_per_class": {
+          "NOUN": {
+            "precision": 1.0,
+            "recall": 0.824561,
+            "f1": 0.903846,
+            "support": 57
+          },
+          "PRON": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 9
+          },
+          "ADJ": {
+            "precision": 1.0,
+            "recall": 0.923077,
+            "f1": 0.96,
+            "support": 13
+          },
+          "VERB": {
+            "precision": 1.0,
+            "recall": 0.904762,
+            "f1": 0.95,
+            "support": 84
+          },
+          "AUX": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 7
+          }
+        },
+        "error_types": {
+          "CORRECT": 151,
+          "UNKNOWN": 19,
+          "WRONG_POS": 0,
+          "WRONG_LEMMA": 0,
+          "WRONG_FEATURES": 0
+        },
+        "guessed": 0,
+        "ambiguous_predictions": 53,
+        "by_category": {
+          "noun_regular": {
+            "total": 30,
+            "correct": 30,
+            "answered": 30
+          },
+          "noun_irregular": {
+            "total": 17,
+            "correct": 17,
+            "answered": 17
+          },
+          "pronoun": {
+            "total": 9,
+            "correct": 9,
+            "answered": 9
+          },
+          "adjective": {
+            "total": 11,
+            "correct": 11,
+            "answered": 11
+          },
+          "verb_regular": {
+            "total": 53,
+            "correct": 53,
+            "answered": 53
+          },
+          "verb_irregular": {
+            "total": 25,
+            "correct": 25,
+            "answered": 25
+          },
+          "lexical_ambiguity": {
+            "total": 4,
+            "correct": 4,
+            "answered": 4
+          },
+          "spelling_variant": {
+            "total": 2,
+            "correct": 2,
+            "answered": 2
+          },
+          "oov": {
+            "total": 17,
+            "correct": 0,
+            "answered": 0
+          },
+          "out_of_scope": {
+            "total": 2,
+            "correct": 0,
+            "answered": 0
+          }
+        }
+      },
+      "Rule-based (no guesser)": {
+        "n_items": 170,
+        "exact_top1": {
+          "accuracy": 0.888235,
+          "precision": 1.0,
+          "recall": 0.888235,
+          "f1": 0.94081,
+          "correct": 151,
+          "answered": 151,
+          "unknown": 19,
+          "errors": 19,
+          "total": 170,
+          "accuracy_defined": true,
+          "precision_defined": true
+        },
+        "lemma_top1": {
+          "accuracy": 0.888235,
+          "precision": 1.0,
+          "recall": 0.888235,
+          "f1": 0.94081,
+          "correct": 151,
+          "answered": 151,
+          "unknown": 19,
+          "errors": 19,
+          "total": 170,
+          "accuracy_defined": true,
+          "precision_defined": true
+        },
+        "analysis_set": {
+          "precision": 1.0,
+          "recall": 0.899614,
+          "f1": 0.947154,
+          "tp": 233,
+          "fp": 0,
+          "fn": 26,
+          "precision_defined": true,
+          "recall_defined": true,
+          "n_pred": 233,
+          "n_gold": 259
+        },
+        "feature_micro": {
+          "precision": 1.0,
+          "recall": 0.898235,
+          "f1": 0.946389,
+          "tp": 865,
+          "fp": 0,
+          "fn": 98,
+          "precision_defined": true,
+          "recall_defined": true
+        },
+        "feature_per_feature": {
+          "lemma": {
+            "precision": 1.0,
+            "recall": 0.888235,
+            "f1": 0.94081,
+            "tp": 151,
+            "fp": 0,
+            "fn": 19,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 170
+          },
+          "pos": {
+            "precision": 1.0,
+            "recall": 0.888235,
+            "f1": 0.94081,
+            "tp": 151,
+            "fp": 0,
+            "fn": 19,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 170
+          },
+          "verbform": {
+            "precision": 1.0,
+            "recall": 0.912088,
+            "f1": 0.954023,
+            "tp": 83,
+            "fp": 0,
+            "fn": 8,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 91
+          },
+          "tense": {
+            "precision": 1.0,
+            "recall": 0.961538,
+            "f1": 0.980392,
+            "tp": 25,
+            "fp": 0,
+            "fn": 1,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 26
+          },
+          "aspect": {
+            "precision": 1.0,
+            "recall": 0.930233,
+            "f1": 0.963855,
+            "tp": 40,
+            "fp": 0,
+            "fn": 3,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 43
+          },
+          "mood": {
+            "precision": 1.0,
+            "recall": 0.95,
+            "f1": 0.974359,
+            "tp": 38,
+            "fp": 0,
+            "fn": 2,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 40
+          },
+          "person": {
+            "precision": 1.0,
+            "recall": 0.955556,
+            "f1": 0.977273,
+            "tp": 43,
+            "fp": 0,
+            "fn": 2,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 45
+          },
+          "gender": {
+            "precision": 1.0,
+            "recall": 0.88806,
+            "f1": 0.940711,
+            "tp": 119,
+            "fp": 0,
+            "fn": 15,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 134
+          },
+          "number": {
+            "precision": 1.0,
+            "recall": 0.9,
+            "f1": 0.947368,
+            "tp": 144,
+            "fp": 0,
+            "fn": 16,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 160
+          },
+          "case": {
+            "precision": 1.0,
+            "recall": 0.845238,
+            "f1": 0.916129,
+            "tp": 71,
+            "fp": 0,
+            "fn": 13,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 84
+          }
+        },
+        "pos_confusion": {
+          "labels": [
+            "NOUN",
+            "PRON",
+            "ADJ",
+            "VERB",
+            "AUX",
+            "UNKNOWN"
+          ],
+          "matrix": [
+            [
+              47,
+              0,
+              0,
+              0,
+              0,
+              10
+            ],
+            [
+              0,
+              9,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              12,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              76,
+              0,
+              8
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              7,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "pos_per_class": {
+          "NOUN": {
+            "precision": 1.0,
+            "recall": 0.824561,
+            "f1": 0.903846,
+            "support": 57
+          },
+          "PRON": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 9
+          },
+          "ADJ": {
+            "precision": 1.0,
+            "recall": 0.923077,
+            "f1": 0.96,
+            "support": 13
+          },
+          "VERB": {
+            "precision": 1.0,
+            "recall": 0.904762,
+            "f1": 0.95,
+            "support": 84
+          },
+          "AUX": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 7
+          }
+        },
+        "error_types": {
+          "CORRECT": 151,
+          "UNKNOWN": 19,
+          "WRONG_POS": 0,
+          "WRONG_LEMMA": 0,
+          "WRONG_FEATURES": 0
+        },
+        "guessed": 0,
+        "ambiguous_predictions": 53,
+        "by_category": {
+          "noun_regular": {
+            "total": 30,
+            "correct": 30,
+            "answered": 30
+          },
+          "noun_irregular": {
+            "total": 17,
+            "correct": 17,
+            "answered": 17
+          },
+          "pronoun": {
+            "total": 9,
+            "correct": 9,
+            "answered": 9
+          },
+          "adjective": {
+            "total": 11,
+            "correct": 11,
+            "answered": 11
+          },
+          "verb_regular": {
+            "total": 53,
+            "correct": 53,
+            "answered": 53
+          },
+          "verb_irregular": {
+            "total": 25,
+            "correct": 25,
+            "answered": 25
+          },
+          "lexical_ambiguity": {
+            "total": 4,
+            "correct": 4,
+            "answered": 4
+          },
+          "spelling_variant": {
+            "total": 2,
+            "correct": 2,
+            "answered": 2
+          },
+          "oov": {
+            "total": 17,
+            "correct": 0,
+            "answered": 0
+          },
+          "out_of_scope": {
+            "total": 2,
+            "correct": 0,
+            "answered": 0
+          }
+        }
+      }
+    }
+  },
+  "test": {
+    "split": "test",
+    "config": {
+      "split": "test",
+      "analyzers": [
+        "Rule-based",
+        "FST",
+        "Rule-based (no guesser)"
+      ],
+      "primary_metric": "exact-analysis top-1 accuracy",
+      "zero_division": "0.0 (flagged as undefined)"
+    },
+    "dataset": {
+      "items": 196,
+      "analyses": 305,
+      "ambiguous_items": 71,
+      "by_split": {
+        "test": 196
+      },
+      "by_category": {
+        "noun_regular": {
+          "dev": 0,
+          "test": 46
+        },
+        "noun_irregular": {
+          "dev": 0,
+          "test": 11
+        },
+        "pronoun": {
+          "dev": 0,
+          "test": 12
+        },
+        "adjective": {
+          "dev": 0,
+          "test": 12
+        },
+        "verb_regular": {
+          "dev": 0,
+          "test": 56
+        },
+        "verb_irregular": {
+          "dev": 0,
+          "test": 26
+        },
+        "lexical_ambiguity": {
+          "dev": 0,
+          "test": 5
+        },
+        "spelling_variant": {
+          "dev": 0,
+          "test": 8
+        },
+        "oov": {
+          "dev": 0,
+          "test": 12
+        },
+        "out_of_scope": {
+          "dev": 0,
+          "test": 8
+        }
+      },
+      "lemma_groups": {
+        "test": 84
+      },
+      "group_overlap_between_splits": [],
+      "items_sharing_normalized_form": 6
+    },
+    "metrics": {
+      "Rule-based": {
+        "n_items": 196,
+        "exact_top1": {
+          "accuracy": 0.959184,
+          "precision": 0.974093,
+          "recall": 0.959184,
+          "f1": 0.966581,
+          "correct": 188,
+          "answered": 193,
+          "unknown": 3,
+          "errors": 8,
+          "total": 196,
+          "accuracy_defined": true,
+          "precision_defined": true
+        },
+        "lemma_top1": {
+          "accuracy": 0.959184,
+          "precision": 0.974093,
+          "recall": 0.959184,
+          "f1": 0.966581,
+          "correct": 188,
+          "answered": 193,
+          "unknown": 3,
+          "errors": 8,
+          "total": 196,
+          "accuracy_defined": true,
+          "precision_defined": true
+        },
+        "analysis_set": {
+          "precision": 0.919872,
+          "recall": 0.940984,
+          "f1": 0.930308,
+          "tp": 287,
+          "fp": 25,
+          "fn": 18,
+          "precision_defined": true,
+          "recall_defined": true,
+          "n_pred": 312,
+          "n_gold": 305
+        },
+        "feature_micro": {
+          "precision": 0.98423,
+          "recall": 0.970723,
+          "f1": 0.97743,
+          "tp": 1061,
+          "fp": 17,
+          "fn": 32,
+          "precision_defined": true,
+          "recall_defined": true
+        },
+        "feature_per_feature": {
+          "lemma": {
+            "precision": 0.974093,
+            "recall": 0.959184,
+            "f1": 0.966581,
+            "tp": 188,
+            "fp": 5,
+            "fn": 8,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 196
+          },
+          "pos": {
+            "precision": 0.974093,
+            "recall": 0.959184,
+            "f1": 0.966581,
+            "tp": 188,
+            "fp": 5,
+            "fn": 8,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 196
+          },
+          "verbform": {
+            "precision": 0.979381,
+            "recall": 0.969388,
+            "f1": 0.974359,
+            "tp": 95,
+            "fp": 2,
+            "fn": 3,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 98
+          },
+          "tense": {
+            "precision": 1.0,
+            "recall": 0.952381,
+            "f1": 0.97561,
+            "tp": 20,
+            "fp": 0,
+            "fn": 1,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 21
+          },
+          "aspect": {
+            "precision": 0.979167,
+            "recall": 0.979167,
+            "f1": 0.979167,
+            "tp": 47,
+            "fp": 1,
+            "fn": 1,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 48
+          },
+          "mood": {
+            "precision": 0.976744,
+            "recall": 0.976744,
+            "f1": 0.976744,
+            "tp": 42,
+            "fp": 1,
+            "fn": 1,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 43
+          },
+          "person": {
+            "precision": 0.981818,
+            "recall": 0.981818,
+            "f1": 0.981818,
+            "tp": 54,
+            "fp": 1,
+            "fn": 1,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 55
+          },
+          "gender": {
+            "precision": 1.0,
+            "recall": 0.980132,
+            "f1": 0.989967,
+            "tp": 148,
+            "fp": 0,
+            "fn": 3,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 151
+          },
+          "number": {
+            "precision": 1.0,
+            "recall": 0.989189,
+            "f1": 0.994565,
+            "tp": 183,
+            "fp": 0,
+            "fn": 2,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 185
+          },
+          "case": {
+            "precision": 0.979592,
+            "recall": 0.96,
+            "f1": 0.969697,
+            "tp": 96,
+            "fp": 2,
+            "fn": 4,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 100
+          }
+        },
+        "pos_confusion": {
+          "labels": [
+            "NOUN",
+            "PRON",
+            "ADJ",
+            "VERB",
+            "AUX",
+            "UNKNOWN"
+          ],
+          "matrix": [
+            [
+              67,
+              0,
+              0,
+              2,
+              0,
+              2
+            ],
+            [
+              0,
+              12,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              14,
+              0,
+              0,
+              0
+            ],
+            [
+              2,
+              0,
+              0,
+              95,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "pos_per_class": {
+          "NOUN": {
+            "precision": 0.957143,
+            "recall": 0.943662,
+            "f1": 0.950355,
+            "support": 71
+          },
+          "PRON": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 12
+          },
+          "ADJ": {
+            "precision": 1.0,
+            "recall": 0.933333,
+            "f1": 0.965517,
+            "support": 15
+          },
+          "VERB": {
+            "precision": 0.979381,
+            "recall": 0.969388,
+            "f1": 0.974359,
+            "support": 98
+          },
+          "AUX": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        },
+        "error_types": {
+          "CORRECT": 188,
+          "UNKNOWN": 3,
+          "WRONG_POS": 5,
+          "WRONG_LEMMA": 0,
+          "WRONG_FEATURES": 0
+        },
+        "guessed": 18,
+        "ambiguous_predictions": 78,
+        "by_category": {
+          "noun_regular": {
+            "total": 46,
+            "correct": 46,
+            "answered": 46
+          },
+          "noun_irregular": {
+            "total": 11,
+            "correct": 11,
+            "answered": 11
+          },
+          "pronoun": {
+            "total": 12,
+            "correct": 12,
+            "answered": 12
+          },
+          "adjective": {
+            "total": 12,
+            "correct": 12,
+            "answered": 12
+          },
+          "verb_regular": {
+            "total": 56,
+            "correct": 56,
+            "answered": 56
+          },
+          "verb_irregular": {
+            "total": 26,
+            "correct": 26,
+            "answered": 26
+          },
+          "lexical_ambiguity": {
+            "total": 5,
+            "correct": 5,
+            "answered": 5
+          },
+          "spelling_variant": {
+            "total": 8,
+            "correct": 7,
+            "answered": 8
+          },
+          "oov": {
+            "total": 12,
+            "correct": 11,
+            "answered": 12
+          },
+          "out_of_scope": {
+            "total": 8,
+            "correct": 2,
+            "answered": 5
+          }
+        }
+      },
+      "FST": {
+        "n_items": 196,
+        "exact_top1": {
+          "accuracy": 0.892857,
+          "precision": 1.0,
+          "recall": 0.892857,
+          "f1": 0.943396,
+          "correct": 175,
+          "answered": 175,
+          "unknown": 21,
+          "errors": 21,
+          "total": 196,
+          "accuracy_defined": true,
+          "precision_defined": true
+        },
+        "lemma_top1": {
+          "accuracy": 0.892857,
+          "precision": 1.0,
+          "recall": 0.892857,
+          "f1": 0.943396,
+          "correct": 175,
+          "answered": 175,
+          "unknown": 21,
+          "errors": 21,
+          "total": 196,
+          "accuracy_defined": true,
+          "precision_defined": true
+        },
+        "analysis_set": {
+          "precision": 1.0,
+          "recall": 0.891803,
+          "f1": 0.942808,
+          "tp": 272,
+          "fp": 0,
+          "fn": 33,
+          "precision_defined": true,
+          "recall_defined": true,
+          "n_pred": 272,
+          "n_gold": 305
+        },
+        "feature_micro": {
+          "precision": 1.0,
+          "recall": 0.898352,
+          "f1": 0.946454,
+          "tp": 981,
+          "fp": 0,
+          "fn": 111,
+          "precision_defined": true,
+          "recall_defined": true
+        },
+        "feature_per_feature": {
+          "lemma": {
+            "precision": 1.0,
+            "recall": 0.892857,
+            "f1": 0.943396,
+            "tp": 175,
+            "fp": 0,
+            "fn": 21,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 196
+          },
+          "pos": {
+            "precision": 1.0,
+            "recall": 0.892857,
+            "f1": 0.943396,
+            "tp": 175,
+            "fp": 0,
+            "fn": 21,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 196
+          },
+          "verbform": {
+            "precision": 1.0,
+            "recall": 0.927835,
+            "f1": 0.962567,
+            "tp": 90,
+            "fp": 0,
+            "fn": 7,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 97
+          },
+          "tense": {
+            "precision": 1.0,
+            "recall": 0.904762,
+            "f1": 0.95,
+            "tp": 19,
+            "fp": 0,
+            "fn": 2,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 21
+          },
+          "aspect": {
+            "precision": 1.0,
+            "recall": 0.957447,
+            "f1": 0.978261,
+            "tp": 45,
+            "fp": 0,
+            "fn": 2,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 47
+          },
+          "mood": {
+            "precision": 1.0,
+            "recall": 0.930233,
+            "f1": 0.963855,
+            "tp": 40,
+            "fp": 0,
+            "fn": 3,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 43
+          },
+          "person": {
+            "precision": 1.0,
+            "recall": 0.945455,
+            "f1": 0.971963,
+            "tp": 52,
+            "fp": 0,
+            "fn": 3,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 55
+          },
+          "gender": {
+            "precision": 1.0,
+            "recall": 0.880795,
+            "f1": 0.93662,
+            "tp": 133,
+            "fp": 0,
+            "fn": 18,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 151
+          },
+          "number": {
+            "precision": 1.0,
+            "recall": 0.897297,
+            "f1": 0.945869,
+            "tp": 166,
+            "fp": 0,
+            "fn": 19,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 185
+          },
+          "case": {
+            "precision": 1.0,
+            "recall": 0.851485,
+            "f1": 0.919786,
+            "tp": 86,
+            "fp": 0,
+            "fn": 15,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 101
+          }
+        },
+        "pos_confusion": {
+          "labels": [
+            "NOUN",
+            "PRON",
+            "ADJ",
+            "VERB",
+            "AUX",
+            "UNKNOWN"
+          ],
+          "matrix": [
+            [
+              59,
+              0,
+              0,
+              0,
+              0,
+              13
+            ],
+            [
+              0,
+              12,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              14,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              90,
+              0,
+              7
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "pos_per_class": {
+          "NOUN": {
+            "precision": 1.0,
+            "recall": 0.819444,
+            "f1": 0.900763,
+            "support": 72
+          },
+          "PRON": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 12
+          },
+          "ADJ": {
+            "precision": 1.0,
+            "recall": 0.933333,
+            "f1": 0.965517,
+            "support": 15
+          },
+          "VERB": {
+            "precision": 1.0,
+            "recall": 0.927835,
+            "f1": 0.962567,
+            "support": 97
+          },
+          "AUX": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        },
+        "error_types": {
+          "CORRECT": 175,
+          "UNKNOWN": 21,
+          "WRONG_POS": 0,
+          "WRONG_LEMMA": 0,
+          "WRONG_FEATURES": 0
+        },
+        "guessed": 0,
+        "ambiguous_predictions": 63,
+        "by_category": {
+          "noun_regular": {
+            "total": 46,
+            "correct": 46,
+            "answered": 46
+          },
+          "noun_irregular": {
+            "total": 11,
+            "correct": 11,
+            "answered": 11
+          },
+          "pronoun": {
+            "total": 12,
+            "correct": 12,
+            "answered": 12
+          },
+          "adjective": {
+            "total": 12,
+            "correct": 12,
+            "answered": 12
+          },
+          "verb_regular": {
+            "total": 56,
+            "correct": 56,
+            "answered": 56
+          },
+          "verb_irregular": {
+            "total": 26,
+            "correct": 26,
+            "answered": 26
+          },
+          "lexical_ambiguity": {
+            "total": 5,
+            "correct": 5,
+            "answered": 5
+          },
+          "spelling_variant": {
+            "total": 8,
+            "correct": 7,
+            "answered": 7
+          },
+          "oov": {
+            "total": 12,
+            "correct": 0,
+            "answered": 0
+          },
+          "out_of_scope": {
+            "total": 8,
+            "correct": 0,
+            "answered": 0
+          }
+        }
+      },
+      "Rule-based (no guesser)": {
+        "n_items": 196,
+        "exact_top1": {
+          "accuracy": 0.892857,
+          "precision": 1.0,
+          "recall": 0.892857,
+          "f1": 0.943396,
+          "correct": 175,
+          "answered": 175,
+          "unknown": 21,
+          "errors": 21,
+          "total": 196,
+          "accuracy_defined": true,
+          "precision_defined": true
+        },
+        "lemma_top1": {
+          "accuracy": 0.892857,
+          "precision": 1.0,
+          "recall": 0.892857,
+          "f1": 0.943396,
+          "correct": 175,
+          "answered": 175,
+          "unknown": 21,
+          "errors": 21,
+          "total": 196,
+          "accuracy_defined": true,
+          "precision_defined": true
+        },
+        "analysis_set": {
+          "precision": 1.0,
+          "recall": 0.891803,
+          "f1": 0.942808,
+          "tp": 272,
+          "fp": 0,
+          "fn": 33,
+          "precision_defined": true,
+          "recall_defined": true,
+          "n_pred": 272,
+          "n_gold": 305
+        },
+        "feature_micro": {
+          "precision": 1.0,
+          "recall": 0.898352,
+          "f1": 0.946454,
+          "tp": 981,
+          "fp": 0,
+          "fn": 111,
+          "precision_defined": true,
+          "recall_defined": true
+        },
+        "feature_per_feature": {
+          "lemma": {
+            "precision": 1.0,
+            "recall": 0.892857,
+            "f1": 0.943396,
+            "tp": 175,
+            "fp": 0,
+            "fn": 21,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 196
+          },
+          "pos": {
+            "precision": 1.0,
+            "recall": 0.892857,
+            "f1": 0.943396,
+            "tp": 175,
+            "fp": 0,
+            "fn": 21,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 196
+          },
+          "verbform": {
+            "precision": 1.0,
+            "recall": 0.927835,
+            "f1": 0.962567,
+            "tp": 90,
+            "fp": 0,
+            "fn": 7,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 97
+          },
+          "tense": {
+            "precision": 1.0,
+            "recall": 0.904762,
+            "f1": 0.95,
+            "tp": 19,
+            "fp": 0,
+            "fn": 2,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 21
+          },
+          "aspect": {
+            "precision": 1.0,
+            "recall": 0.957447,
+            "f1": 0.978261,
+            "tp": 45,
+            "fp": 0,
+            "fn": 2,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 47
+          },
+          "mood": {
+            "precision": 1.0,
+            "recall": 0.930233,
+            "f1": 0.963855,
+            "tp": 40,
+            "fp": 0,
+            "fn": 3,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 43
+          },
+          "person": {
+            "precision": 1.0,
+            "recall": 0.945455,
+            "f1": 0.971963,
+            "tp": 52,
+            "fp": 0,
+            "fn": 3,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 55
+          },
+          "gender": {
+            "precision": 1.0,
+            "recall": 0.880795,
+            "f1": 0.93662,
+            "tp": 133,
+            "fp": 0,
+            "fn": 18,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 151
+          },
+          "number": {
+            "precision": 1.0,
+            "recall": 0.897297,
+            "f1": 0.945869,
+            "tp": 166,
+            "fp": 0,
+            "fn": 19,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 185
+          },
+          "case": {
+            "precision": 1.0,
+            "recall": 0.851485,
+            "f1": 0.919786,
+            "tp": 86,
+            "fp": 0,
+            "fn": 15,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 101
+          }
+        },
+        "pos_confusion": {
+          "labels": [
+            "NOUN",
+            "PRON",
+            "ADJ",
+            "VERB",
+            "AUX",
+            "UNKNOWN"
+          ],
+          "matrix": [
+            [
+              59,
+              0,
+              0,
+              0,
+              0,
+              13
+            ],
+            [
+              0,
+              12,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              14,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              90,
+              0,
+              7
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "pos_per_class": {
+          "NOUN": {
+            "precision": 1.0,
+            "recall": 0.819444,
+            "f1": 0.900763,
+            "support": 72
+          },
+          "PRON": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 12
+          },
+          "ADJ": {
+            "precision": 1.0,
+            "recall": 0.933333,
+            "f1": 0.965517,
+            "support": 15
+          },
+          "VERB": {
+            "precision": 1.0,
+            "recall": 0.927835,
+            "f1": 0.962567,
+            "support": 97
+          },
+          "AUX": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "support": 0
+          }
+        },
+        "error_types": {
+          "CORRECT": 175,
+          "UNKNOWN": 21,
+          "WRONG_POS": 0,
+          "WRONG_LEMMA": 0,
+          "WRONG_FEATURES": 0
+        },
+        "guessed": 0,
+        "ambiguous_predictions": 63,
+        "by_category": {
+          "noun_regular": {
+            "total": 46,
+            "correct": 46,
+            "answered": 46
+          },
+          "noun_irregular": {
+            "total": 11,
+            "correct": 11,
+            "answered": 11
+          },
+          "pronoun": {
+            "total": 12,
+            "correct": 12,
+            "answered": 12
+          },
+          "adjective": {
+            "total": 12,
+            "correct": 12,
+            "answered": 12
+          },
+          "verb_regular": {
+            "total": 56,
+            "correct": 56,
+            "answered": 56
+          },
+          "verb_irregular": {
+            "total": 26,
+            "correct": 26,
+            "answered": 26
+          },
+          "lexical_ambiguity": {
+            "total": 5,
+            "correct": 5,
+            "answered": 5
+          },
+          "spelling_variant": {
+            "total": 8,
+            "correct": 7,
+            "answered": 7
+          },
+          "oov": {
+            "total": 12,
+            "correct": 0,
+            "answered": 0
+          },
+          "out_of_scope": {
+            "total": 8,
+            "correct": 0,
+            "answered": 0
+          }
+        }
+      }
+    }
+  },
+  "all": {
+    "split": "all",
+    "config": {
+      "split": "all",
+      "analyzers": [
+        "Rule-based",
+        "FST",
+        "Rule-based (no guesser)"
+      ],
+      "primary_metric": "exact-analysis top-1 accuracy",
+      "zero_division": "0.0 (flagged as undefined)"
+    },
+    "dataset": {
+      "items": 366,
+      "analyses": 564,
+      "ambiguous_items": 129,
+      "by_split": {
+        "dev": 170,
+        "test": 196
+      },
+      "by_category": {
+        "noun_regular": {
+          "dev": 30,
+          "test": 46
+        },
+        "noun_irregular": {
+          "dev": 17,
+          "test": 11
+        },
+        "pronoun": {
+          "dev": 9,
+          "test": 12
+        },
+        "adjective": {
+          "dev": 11,
+          "test": 12
+        },
+        "verb_regular": {
+          "dev": 53,
+          "test": 56
+        },
+        "verb_irregular": {
+          "dev": 25,
+          "test": 26
+        },
+        "lexical_ambiguity": {
+          "dev": 4,
+          "test": 5
+        },
+        "spelling_variant": {
+          "dev": 2,
+          "test": 8
+        },
+        "oov": {
+          "dev": 17,
+          "test": 12
+        },
+        "out_of_scope": {
+          "dev": 2,
+          "test": 8
+        }
+      },
+      "lemma_groups": {
+        "dev": 72,
+        "test": 84
+      },
+      "group_overlap_between_splits": [],
+      "items_sharing_normalized_form": 8
+    },
+    "metrics": {
+      "Rule-based": {
+        "n_items": 366,
+        "exact_top1": {
+          "accuracy": 0.961749,
+          "precision": 0.972376,
+          "recall": 0.961749,
+          "f1": 0.967033,
+          "correct": 352,
+          "answered": 362,
+          "unknown": 4,
+          "errors": 14,
+          "total": 366,
+          "accuracy_defined": true,
+          "precision_defined": true
+        },
+        "lemma_top1": {
+          "accuracy": 0.964481,
+          "precision": 0.975138,
+          "recall": 0.964481,
+          "f1": 0.96978,
+          "correct": 353,
+          "answered": 362,
+          "unknown": 4,
+          "errors": 13,
+          "total": 366,
+          "accuracy_defined": true,
+          "precision_defined": true
+        },
+        "analysis_set": {
+          "precision": 0.906198,
+          "recall": 0.95922,
+          "f1": 0.931955,
+          "tp": 541,
+          "fp": 56,
+          "fn": 23,
+          "precision_defined": true,
+          "recall_defined": true,
+          "n_pred": 597,
+          "n_gold": 564
+        },
+        "feature_micro": {
+          "precision": 0.986261,
+          "recall": 0.977626,
+          "f1": 0.981925,
+          "tp": 2010,
+          "fp": 28,
+          "fn": 46,
+          "precision_defined": true,
+          "recall_defined": true
+        },
+        "feature_per_feature": {
+          "lemma": {
+            "precision": 0.975138,
+            "recall": 0.964481,
+            "f1": 0.96978,
+            "tp": 353,
+            "fp": 9,
+            "fn": 13,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 366
+          },
+          "pos": {
+            "precision": 0.977901,
+            "recall": 0.967213,
+            "f1": 0.972527,
+            "tp": 354,
+            "fp": 8,
+            "fn": 12,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 366
+          },
+          "verbform": {
+            "precision": 0.983957,
+            "recall": 0.973545,
+            "f1": 0.978723,
+            "tp": 184,
+            "fp": 3,
+            "fn": 5,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 189
+          },
+          "tense": {
+            "precision": 1.0,
+            "recall": 0.978723,
+            "f1": 0.989247,
+            "tp": 46,
+            "fp": 0,
+            "fn": 1,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 47
+          },
+          "aspect": {
+            "precision": 0.988889,
+            "recall": 0.978022,
+            "f1": 0.983425,
+            "tp": 89,
+            "fp": 1,
+            "fn": 2,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 91
+          },
+          "mood": {
+            "precision": 0.97619,
+            "recall": 0.987952,
+            "f1": 0.982036,
+            "tp": 82,
+            "fp": 2,
+            "fn": 1,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 83
+          },
+          "person": {
+            "precision": 0.980198,
+            "recall": 0.99,
+            "f1": 0.985075,
+            "tp": 99,
+            "fp": 2,
+            "fn": 1,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 100
+          },
+          "gender": {
+            "precision": 1.0,
+            "recall": 0.985965,
+            "f1": 0.992933,
+            "tp": 281,
+            "fp": 0,
+            "fn": 4,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 285
+          },
+          "number": {
+            "precision": 1.0,
+            "recall": 0.994203,
+            "f1": 0.997093,
+            "tp": 343,
+            "fp": 0,
+            "fn": 2,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 345
+          },
+          "case": {
+            "precision": 0.983516,
+            "recall": 0.972826,
+            "f1": 0.978142,
+            "tp": 179,
+            "fp": 3,
+            "fn": 5,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 184
+          }
+        },
+        "pos_confusion": {
+          "labels": [
+            "NOUN",
+            "PRON",
+            "ADJ",
+            "VERB",
+            "AUX",
+            "UNKNOWN"
+          ],
+          "matrix": [
+            [
+              123,
+              0,
+              0,
+              3,
+              0,
+              2
+            ],
+            [
+              0,
+              21,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              2,
+              0,
+              26,
+              0,
+              0,
+              0
+            ],
+            [
+              3,
+              0,
+              0,
+              177,
+              0,
+              2
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              7,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "pos_per_class": {
+          "NOUN": {
+            "precision": 0.960938,
+            "recall": 0.960938,
+            "f1": 0.960938,
+            "support": 128
+          },
+          "PRON": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 21
+          },
+          "ADJ": {
+            "precision": 1.0,
+            "recall": 0.928571,
+            "f1": 0.962963,
+            "support": 28
+          },
+          "VERB": {
+            "precision": 0.983333,
+            "recall": 0.972527,
+            "f1": 0.977901,
+            "support": 182
+          },
+          "AUX": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 7
+          }
+        },
+        "error_types": {
+          "CORRECT": 352,
+          "UNKNOWN": 4,
+          "WRONG_POS": 8,
+          "WRONG_LEMMA": 2,
+          "WRONG_FEATURES": 0
+        },
+        "guessed": 36,
+        "ambiguous_predictions": 149,
+        "by_category": {
+          "noun_regular": {
+            "total": 76,
+            "correct": 76,
+            "answered": 76
+          },
+          "noun_irregular": {
+            "total": 28,
+            "correct": 28,
+            "answered": 28
+          },
+          "pronoun": {
+            "total": 21,
+            "correct": 21,
+            "answered": 21
+          },
+          "adjective": {
+            "total": 23,
+            "correct": 23,
+            "answered": 23
+          },
+          "verb_regular": {
+            "total": 109,
+            "correct": 109,
+            "answered": 109
+          },
+          "verb_irregular": {
+            "total": 51,
+            "correct": 51,
+            "answered": 51
+          },
+          "lexical_ambiguity": {
+            "total": 9,
+            "correct": 9,
+            "answered": 9
+          },
+          "spelling_variant": {
+            "total": 10,
+            "correct": 9,
+            "answered": 10
+          },
+          "oov": {
+            "total": 29,
+            "correct": 24,
+            "answered": 29
+          },
+          "out_of_scope": {
+            "total": 10,
+            "correct": 2,
+            "answered": 6
+          }
+        }
+      },
+      "FST": {
+        "n_items": 366,
+        "exact_top1": {
+          "accuracy": 0.89071,
+          "precision": 1.0,
+          "recall": 0.89071,
+          "f1": 0.942197,
+          "correct": 326,
+          "answered": 326,
+          "unknown": 40,
+          "errors": 40,
+          "total": 366,
+          "accuracy_defined": true,
+          "precision_defined": true
+        },
+        "lemma_top1": {
+          "accuracy": 0.89071,
+          "precision": 1.0,
+          "recall": 0.89071,
+          "f1": 0.942197,
+          "correct": 326,
+          "answered": 326,
+          "unknown": 40,
+          "errors": 40,
+          "total": 366,
+          "accuracy_defined": true,
+          "precision_defined": true
+        },
+        "analysis_set": {
+          "precision": 1.0,
+          "recall": 0.89539,
+          "f1": 0.944808,
+          "tp": 505,
+          "fp": 0,
+          "fn": 59,
+          "precision_defined": true,
+          "recall_defined": true,
+          "n_pred": 505,
+          "n_gold": 564
+        },
+        "feature_micro": {
+          "precision": 1.0,
+          "recall": 0.898297,
+          "f1": 0.946424,
+          "tp": 1846,
+          "fp": 0,
+          "fn": 209,
+          "precision_defined": true,
+          "recall_defined": true
+        },
+        "feature_per_feature": {
+          "lemma": {
+            "precision": 1.0,
+            "recall": 0.89071,
+            "f1": 0.942197,
+            "tp": 326,
+            "fp": 0,
+            "fn": 40,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 366
+          },
+          "pos": {
+            "precision": 1.0,
+            "recall": 0.89071,
+            "f1": 0.942197,
+            "tp": 326,
+            "fp": 0,
+            "fn": 40,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 366
+          },
+          "verbform": {
+            "precision": 1.0,
+            "recall": 0.920213,
+            "f1": 0.958449,
+            "tp": 173,
+            "fp": 0,
+            "fn": 15,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 188
+          },
+          "tense": {
+            "precision": 1.0,
+            "recall": 0.93617,
+            "f1": 0.967033,
+            "tp": 44,
+            "fp": 0,
+            "fn": 3,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 47
+          },
+          "aspect": {
+            "precision": 1.0,
+            "recall": 0.944444,
+            "f1": 0.971429,
+            "tp": 85,
+            "fp": 0,
+            "fn": 5,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 90
+          },
+          "mood": {
+            "precision": 1.0,
+            "recall": 0.939759,
+            "f1": 0.968944,
+            "tp": 78,
+            "fp": 0,
+            "fn": 5,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 83
+          },
+          "person": {
+            "precision": 1.0,
+            "recall": 0.95,
+            "f1": 0.974359,
+            "tp": 95,
+            "fp": 0,
+            "fn": 5,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 100
+          },
+          "gender": {
+            "precision": 1.0,
+            "recall": 0.884211,
+            "f1": 0.938547,
+            "tp": 252,
+            "fp": 0,
+            "fn": 33,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 285
+          },
+          "number": {
+            "precision": 1.0,
+            "recall": 0.898551,
+            "f1": 0.946565,
+            "tp": 310,
+            "fp": 0,
+            "fn": 35,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 345
+          },
+          "case": {
+            "precision": 1.0,
+            "recall": 0.848649,
+            "f1": 0.918129,
+            "tp": 157,
+            "fp": 0,
+            "fn": 28,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 185
+          }
+        },
+        "pos_confusion": {
+          "labels": [
+            "NOUN",
+            "PRON",
+            "ADJ",
+            "VERB",
+            "AUX",
+            "UNKNOWN"
+          ],
+          "matrix": [
+            [
+              106,
+              0,
+              0,
+              0,
+              0,
+              23
+            ],
+            [
+              0,
+              21,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              26,
+              0,
+              0,
+              2
+            ],
+            [
+              0,
+              0,
+              0,
+              166,
+              0,
+              15
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              7,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "pos_per_class": {
+          "NOUN": {
+            "precision": 1.0,
+            "recall": 0.821705,
+            "f1": 0.902128,
+            "support": 129
+          },
+          "PRON": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 21
+          },
+          "ADJ": {
+            "precision": 1.0,
+            "recall": 0.928571,
+            "f1": 0.962963,
+            "support": 28
+          },
+          "VERB": {
+            "precision": 1.0,
+            "recall": 0.917127,
+            "f1": 0.956772,
+            "support": 181
+          },
+          "AUX": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 7
+          }
+        },
+        "error_types": {
+          "CORRECT": 326,
+          "UNKNOWN": 40,
+          "WRONG_POS": 0,
+          "WRONG_LEMMA": 0,
+          "WRONG_FEATURES": 0
+        },
+        "guessed": 0,
+        "ambiguous_predictions": 116,
+        "by_category": {
+          "noun_regular": {
+            "total": 76,
+            "correct": 76,
+            "answered": 76
+          },
+          "noun_irregular": {
+            "total": 28,
+            "correct": 28,
+            "answered": 28
+          },
+          "pronoun": {
+            "total": 21,
+            "correct": 21,
+            "answered": 21
+          },
+          "adjective": {
+            "total": 23,
+            "correct": 23,
+            "answered": 23
+          },
+          "verb_regular": {
+            "total": 109,
+            "correct": 109,
+            "answered": 109
+          },
+          "verb_irregular": {
+            "total": 51,
+            "correct": 51,
+            "answered": 51
+          },
+          "lexical_ambiguity": {
+            "total": 9,
+            "correct": 9,
+            "answered": 9
+          },
+          "spelling_variant": {
+            "total": 10,
+            "correct": 9,
+            "answered": 9
+          },
+          "oov": {
+            "total": 29,
+            "correct": 0,
+            "answered": 0
+          },
+          "out_of_scope": {
+            "total": 10,
+            "correct": 0,
+            "answered": 0
+          }
+        }
+      },
+      "Rule-based (no guesser)": {
+        "n_items": 366,
+        "exact_top1": {
+          "accuracy": 0.89071,
+          "precision": 1.0,
+          "recall": 0.89071,
+          "f1": 0.942197,
+          "correct": 326,
+          "answered": 326,
+          "unknown": 40,
+          "errors": 40,
+          "total": 366,
+          "accuracy_defined": true,
+          "precision_defined": true
+        },
+        "lemma_top1": {
+          "accuracy": 0.89071,
+          "precision": 1.0,
+          "recall": 0.89071,
+          "f1": 0.942197,
+          "correct": 326,
+          "answered": 326,
+          "unknown": 40,
+          "errors": 40,
+          "total": 366,
+          "accuracy_defined": true,
+          "precision_defined": true
+        },
+        "analysis_set": {
+          "precision": 1.0,
+          "recall": 0.89539,
+          "f1": 0.944808,
+          "tp": 505,
+          "fp": 0,
+          "fn": 59,
+          "precision_defined": true,
+          "recall_defined": true,
+          "n_pred": 505,
+          "n_gold": 564
+        },
+        "feature_micro": {
+          "precision": 1.0,
+          "recall": 0.898297,
+          "f1": 0.946424,
+          "tp": 1846,
+          "fp": 0,
+          "fn": 209,
+          "precision_defined": true,
+          "recall_defined": true
+        },
+        "feature_per_feature": {
+          "lemma": {
+            "precision": 1.0,
+            "recall": 0.89071,
+            "f1": 0.942197,
+            "tp": 326,
+            "fp": 0,
+            "fn": 40,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 366
+          },
+          "pos": {
+            "precision": 1.0,
+            "recall": 0.89071,
+            "f1": 0.942197,
+            "tp": 326,
+            "fp": 0,
+            "fn": 40,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 366
+          },
+          "verbform": {
+            "precision": 1.0,
+            "recall": 0.920213,
+            "f1": 0.958449,
+            "tp": 173,
+            "fp": 0,
+            "fn": 15,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 188
+          },
+          "tense": {
+            "precision": 1.0,
+            "recall": 0.93617,
+            "f1": 0.967033,
+            "tp": 44,
+            "fp": 0,
+            "fn": 3,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 47
+          },
+          "aspect": {
+            "precision": 1.0,
+            "recall": 0.944444,
+            "f1": 0.971429,
+            "tp": 85,
+            "fp": 0,
+            "fn": 5,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 90
+          },
+          "mood": {
+            "precision": 1.0,
+            "recall": 0.939759,
+            "f1": 0.968944,
+            "tp": 78,
+            "fp": 0,
+            "fn": 5,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 83
+          },
+          "person": {
+            "precision": 1.0,
+            "recall": 0.95,
+            "f1": 0.974359,
+            "tp": 95,
+            "fp": 0,
+            "fn": 5,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 100
+          },
+          "gender": {
+            "precision": 1.0,
+            "recall": 0.884211,
+            "f1": 0.938547,
+            "tp": 252,
+            "fp": 0,
+            "fn": 33,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 285
+          },
+          "number": {
+            "precision": 1.0,
+            "recall": 0.898551,
+            "f1": 0.946565,
+            "tp": 310,
+            "fp": 0,
+            "fn": 35,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 345
+          },
+          "case": {
+            "precision": 1.0,
+            "recall": 0.848649,
+            "f1": 0.918129,
+            "tp": 157,
+            "fp": 0,
+            "fn": 28,
+            "precision_defined": true,
+            "recall_defined": true,
+            "support": 185
+          }
+        },
+        "pos_confusion": {
+          "labels": [
+            "NOUN",
+            "PRON",
+            "ADJ",
+            "VERB",
+            "AUX",
+            "UNKNOWN"
+          ],
+          "matrix": [
+            [
+              106,
+              0,
+              0,
+              0,
+              0,
+              23
+            ],
+            [
+              0,
+              21,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              26,
+              0,
+              0,
+              2
+            ],
+            [
+              0,
+              0,
+              0,
+              166,
+              0,
+              15
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              7,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "pos_per_class": {
+          "NOUN": {
+            "precision": 1.0,
+            "recall": 0.821705,
+            "f1": 0.902128,
+            "support": 129
+          },
+          "PRON": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 21
+          },
+          "ADJ": {
+            "precision": 1.0,
+            "recall": 0.928571,
+            "f1": 0.962963,
+            "support": 28
+          },
+          "VERB": {
+            "precision": 1.0,
+            "recall": 0.917127,
+            "f1": 0.956772,
+            "support": 181
+          },
+          "AUX": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 7
+          }
+        },
+        "error_types": {
+          "CORRECT": 326,
+          "UNKNOWN": 40,
+          "WRONG_POS": 0,
+          "WRONG_LEMMA": 0,
+          "WRONG_FEATURES": 0
+        },
+        "guessed": 0,
+        "ambiguous_predictions": 116,
+        "by_category": {
+          "noun_regular": {
+            "total": 76,
+            "correct": 76,
+            "answered": 76
+          },
+          "noun_irregular": {
+            "total": 28,
+            "correct": 28,
+            "answered": 28
+          },
+          "pronoun": {
+            "total": 21,
+            "correct": 21,
+            "answered": 21
+          },
+          "adjective": {
+            "total": 23,
+            "correct": 23,
+            "answered": 23
+          },
+          "verb_regular": {
+            "total": 109,
+            "correct": 109,
+            "answered": 109
+          },
+          "verb_irregular": {
+            "total": 51,
+            "correct": 51,
+            "answered": 51
+          },
+          "lexical_ambiguity": {
+            "total": 9,
+            "correct": 9,
+            "answered": 9
+          },
+          "spelling_variant": {
+            "total": 10,
+            "correct": 9,
+            "answered": 9
+          },
+          "oov": {
+            "total": 29,
+            "correct": 0,
+            "answered": 0
+          },
+          "out_of_scope": {
+            "total": 10,
+            "correct": 0,
+            "answered": 0
+          }
+        }
+      }
+    }
+  }
+}

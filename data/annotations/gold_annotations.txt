@@ -1,0 +1,414 @@
+# Gold-standard morphological annotations (manually curated for this project).
+#
+# Format:   word :: category :: analysis | analysis | ... [:: note]
+# Analysis: lemma TAG TAG ...   (tags as in src/schema.py; omitted features are NA)
+#
+# Every analysis that is grammatically possible for the isolated word form under
+# the project's annotation scheme is listed (context-free annotation).  The
+# annotations were written from Hindi reference grammar, not from analyzer output.
+#
+# Categories:
+#   noun_regular       productive noun classes (-आ masc, consonant masc/fem, -ई fem, -आ fem)
+#   noun_irregular     exception / stem-change classes (invariant -आ masc, -ई/-ऊ masc, -इया, -ऊ/-उ fem)
+#   pronoun            personal pronouns (suppletive)
+#   adjective          inflecting and invariant adjectives
+#   verb_regular       regular verb forms
+#   verb_irregular     suppletive / irregular verb forms (करना, जाना, होना, देना, लेना, पीना ...)
+#   lexical_ambiguity  forms that belong to two different lemmas
+#   spelling_variant   non-canonical but common spellings (tests normalisation)
+#   oov                in-scope inflection of a lemma that is NOT in the lexicon
+#   out_of_scope       morphology the system does not implement (derivation, vocative, -कर ...)
+
+# ---------------- nouns: masculine -आ ----------------
+लड़का :: noun_regular :: लड़का NOUN MASC SG DIR
+लड़के :: noun_regular :: लड़का NOUN MASC SG OBL | लड़का NOUN MASC PL DIR
+लड़कों :: noun_regular :: लड़का NOUN MASC PL OBL
+बेटे :: noun_regular :: बेटा NOUN MASC SG OBL | बेटा NOUN MASC PL DIR
+बेटों :: noun_regular :: बेटा NOUN MASC PL OBL
+कमरा :: noun_regular :: कमरा NOUN MASC SG DIR
+कमरे :: noun_regular :: कमरा NOUN MASC SG OBL | कमरा NOUN MASC PL DIR
+कमरों :: noun_regular :: कमरा NOUN MASC PL OBL
+घोड़े :: noun_regular :: घोड़ा NOUN MASC SG OBL | घोड़ा NOUN MASC PL DIR
+घोड़ों :: noun_regular :: घोड़ा NOUN MASC PL OBL
+कपड़े :: noun_regular :: कपड़ा NOUN MASC SG OBL | कपड़ा NOUN MASC PL DIR
+कपड़ों :: noun_regular :: कपड़ा NOUN MASC PL OBL
+रास्ते :: noun_regular :: रास्ता NOUN MASC SG OBL | रास्ता NOUN MASC PL DIR
+बच्चा :: noun_regular :: बच्चा NOUN MASC SG DIR
+बच्चे :: noun_regular :: बच्चा NOUN MASC SG OBL | बच्चा NOUN MASC PL DIR
+बच्चों :: noun_regular :: बच्चा NOUN MASC PL OBL
+केले :: noun_regular :: केला NOUN MASC SG OBL | केला NOUN MASC PL DIR
+केलों :: noun_regular :: केला NOUN MASC PL OBL
+जूते :: noun_regular :: जूता NOUN MASC SG OBL | जूता NOUN MASC PL DIR
+जूतों :: noun_regular :: जूता NOUN MASC PL OBL
+दरवाज़े :: noun_regular :: दरवाज़ा NOUN MASC SG OBL | दरवाज़ा NOUN MASC PL DIR
+पंखे :: noun_regular :: पंखा NOUN MASC SG OBL | पंखा NOUN MASC PL DIR
+कुत्तों :: noun_regular :: कुत्ता NOUN MASC PL OBL
+तारे :: noun_regular :: तारा NOUN MASC SG OBL | तारा NOUN MASC PL DIR
+
+# ---------------- nouns: masculine consonant-final ----------------
+घर :: noun_regular :: घर NOUN MASC SG DIR | घर NOUN MASC SG OBL | घर NOUN MASC PL DIR
+घरों :: noun_regular :: घर NOUN MASC PL OBL
+दिन :: noun_regular :: दिन NOUN MASC SG DIR | दिन NOUN MASC SG OBL | दिन NOUN MASC PL DIR
+दिनों :: noun_regular :: दिन NOUN MASC PL OBL
+शहरों :: noun_regular :: शहर NOUN MASC PL OBL
+हाथ :: noun_regular :: हाथ NOUN MASC SG DIR | हाथ NOUN MASC SG OBL | हाथ NOUN MASC PL DIR
+हाथों :: noun_regular :: हाथ NOUN MASC PL OBL
+पेड़ों :: noun_regular :: पेड़ NOUN MASC PL OBL
+फलों :: noun_regular :: फल NOUN MASC PL OBL
+देशों :: noun_regular :: देश NOUN MASC PL OBL
+दोस्तों :: noun_regular :: दोस्त NOUN MASC PL OBL
+गाँव :: noun_regular :: गाँव NOUN MASC SG DIR | गाँव NOUN MASC SG OBL | गाँव NOUN MASC PL DIR
+गाँवों :: noun_regular :: गाँव NOUN MASC PL OBL
+बाज़ारों :: noun_regular :: बाज़ार NOUN MASC PL OBL
+सेबों :: noun_regular :: सेब NOUN MASC PL OBL
+दाँतों :: noun_regular :: दाँत NOUN MASC PL OBL
+
+# ---------------- nouns: feminine -ई ----------------
+लड़की :: noun_regular :: लड़की NOUN FEM SG DIR | लड़की NOUN FEM SG OBL
+लड़कियाँ :: noun_regular :: लड़की NOUN FEM PL DIR
+लड़कियों :: noun_regular :: लड़की NOUN FEM PL OBL
+नदियाँ :: noun_regular :: नदी NOUN FEM PL DIR
+नदियों :: noun_regular :: नदी NOUN FEM PL OBL
+रोटी :: noun_regular :: रोटी NOUN FEM SG DIR | रोटी NOUN FEM SG OBL
+रोटियाँ :: noun_regular :: रोटी NOUN FEM PL DIR
+कुर्सियाँ :: noun_regular :: कुर्सी NOUN FEM PL DIR
+कुर्सियों :: noun_regular :: कुर्सी NOUN FEM PL OBL
+बेटियाँ :: noun_regular :: बेटी NOUN FEM PL DIR
+खिड़कियों :: noun_regular :: खिड़की NOUN FEM PL OBL
+चाबियाँ :: noun_regular :: चाबी NOUN FEM PL DIR
+
+# ---------------- nouns: feminine consonant-final / -आ ----------------
+किताब :: noun_regular :: किताब NOUN FEM SG DIR | किताब NOUN FEM SG OBL
+किताबें :: noun_regular :: किताब NOUN FEM PL DIR
+किताबों :: noun_regular :: किताब NOUN FEM PL OBL
+बातें :: noun_regular :: बात NOUN FEM PL DIR
+बातों :: noun_regular :: बात NOUN FEM PL OBL
+रातें :: noun_regular :: रात NOUN FEM PL DIR
+रातों :: noun_regular :: रात NOUN FEM PL OBL
+मेज़ें :: noun_regular :: मेज़ NOUN FEM PL DIR
+सड़कें :: noun_regular :: सड़क NOUN FEM PL DIR
+सड़कों :: noun_regular :: सड़क NOUN FEM PL OBL
+बहनें :: noun_regular :: बहन NOUN FEM PL DIR
+बहनों :: noun_regular :: बहन NOUN FEM PL OBL
+आँखें :: noun_regular :: आँख NOUN FEM PL DIR
+आँखों :: noun_regular :: आँख NOUN FEM PL OBL
+कलमें :: noun_regular :: कलम NOUN FEM PL DIR
+दुकानों :: noun_regular :: दुकान NOUN FEM PL OBL
+गायें :: noun_regular :: गाय NOUN FEM PL DIR | गाना VERB FIN SUBJ 1 PL | गाना VERB FIN SUBJ 2 PL | गाना VERB FIN SUBJ 3 PL :: also a common spelling of गाएँ 'may sing' under the ये/ए convention (correction C1)
+मालाएँ :: noun_regular :: माला NOUN FEM PL DIR
+भाषा :: noun_regular :: भाषा NOUN FEM SG DIR | भाषा NOUN FEM SG OBL
+भाषाएँ :: noun_regular :: भाषा NOUN FEM PL DIR
+भाषाओं :: noun_regular :: भाषा NOUN FEM PL OBL
+कविताएँ :: noun_regular :: कविता NOUN FEM PL DIR
+माताओं :: noun_regular :: माता NOUN FEM PL OBL
+कक्षाओं :: noun_regular :: कक्षा NOUN FEM PL OBL
+
+# ---------------- nouns: exception and stem-change classes ----------------
+राजा :: noun_irregular :: राजा NOUN MASC SG DIR | राजा NOUN MASC SG OBL | राजा NOUN MASC PL DIR :: -आ does not change to -ए
+राजाओं :: noun_irregular :: राजा NOUN MASC PL OBL
+पिता :: noun_irregular :: पिता NOUN MASC SG DIR | पिता NOUN MASC SG OBL | पिता NOUN MASC PL DIR
+पिताओं :: noun_irregular :: पिता NOUN MASC PL OBL
+नेता :: noun_irregular :: नेता NOUN MASC SG DIR | नेता NOUN MASC SG OBL | नेता NOUN MASC PL DIR
+नेताओं :: noun_irregular :: नेता NOUN MASC PL OBL
+देवताओं :: noun_irregular :: देवता NOUN MASC PL OBL
+आदमी :: noun_irregular :: आदमी NOUN MASC SG DIR | आदमी NOUN MASC SG OBL | आदमी NOUN MASC PL DIR
+आदमियों :: noun_irregular :: आदमी NOUN MASC PL OBL
+हाथी :: noun_irregular :: हाथी NOUN MASC SG DIR | हाथी NOUN MASC SG OBL | हाथी NOUN MASC PL DIR
+हाथियों :: noun_irregular :: हाथी NOUN MASC PL OBL
+मोतियों :: noun_irregular :: मोती NOUN MASC PL OBL
+धोबियों :: noun_irregular :: धोबी NOUN MASC PL OBL
+मालियों :: noun_irregular :: माली NOUN MASC PL OBL
+आलू :: noun_irregular :: आलू NOUN MASC SG DIR | आलू NOUN MASC SG OBL | आलू NOUN MASC PL DIR
+आलुओं :: noun_irregular :: आलू NOUN MASC PL OBL
+भालुओं :: noun_irregular :: भालू NOUN MASC PL OBL
+डाकुओं :: noun_irregular :: डाकू NOUN MASC PL OBL
+चिड़िया :: noun_irregular :: चिड़िया NOUN FEM SG DIR | चिड़िया NOUN FEM SG OBL
+चिड़ियाँ :: noun_irregular :: चिड़िया NOUN FEM PL DIR
+चिड़ियों :: noun_irregular :: चिड़िया NOUN FEM PL OBL
+गुड़ियाँ :: noun_irregular :: गुड़िया NOUN FEM PL DIR
+बुढ़ियों :: noun_irregular :: बुढ़िया NOUN FEM PL OBL
+बहुएँ :: noun_irregular :: बहू NOUN FEM PL DIR
+बहुओं :: noun_irregular :: बहू NOUN FEM PL OBL
+वस्तुएँ :: noun_irregular :: वस्तु NOUN FEM PL DIR
+वस्तुओं :: noun_irregular :: वस्तु NOUN FEM PL OBL
+धातुएँ :: noun_irregular :: धातु NOUN FEM PL DIR
+
+# ---------------- pronouns ----------------
+मैं :: pronoun :: मैं PRON 1 SG DIR
+मुझे :: pronoun :: मैं PRON 1 SG ACC_DAT
+मुझ :: pronoun :: मैं PRON 1 SG OBL
+हम :: pronoun :: हम PRON 1 PL DIR | हम PRON 1 PL OBL
+हमें :: pronoun :: हम PRON 1 PL ACC_DAT
+तू :: pronoun :: तू PRON 2 SG DIR
+तुझे :: pronoun :: तू PRON 2 SG ACC_DAT
+तुम :: pronoun :: तुम PRON 2 PL DIR | तुम PRON 2 PL OBL
+तुम्हें :: pronoun :: तुम PRON 2 PL ACC_DAT
+आप :: pronoun :: आप PRON 2 PL DIR | आप PRON 2 PL OBL
+वह :: pronoun :: वह PRON 3 SG DIR
+उसे :: pronoun :: वह PRON 3 SG ACC_DAT
+उस :: pronoun :: वह PRON 3 SG OBL
+वे :: pronoun :: वह PRON 3 PL DIR
+उन्हें :: pronoun :: वह PRON 3 PL ACC_DAT
+उन :: pronoun :: वह PRON 3 PL OBL
+यह :: pronoun :: यह PRON 3 SG DIR
+इसे :: pronoun :: यह PRON 3 SG ACC_DAT
+ये :: pronoun :: यह PRON 3 PL DIR
+इन्हें :: pronoun :: यह PRON 3 PL ACC_DAT
+इस :: pronoun :: यह PRON 3 SG OBL
+
+# ---------------- adjectives ----------------
+अच्छा :: adjective :: अच्छा ADJ MASC SG DIR
+अच्छे :: adjective :: अच्छा ADJ MASC SG OBL | अच्छा ADJ MASC PL DIR | अच्छा ADJ MASC PL OBL
+अच्छी :: adjective :: अच्छा ADJ FEM SG DIR | अच्छा ADJ FEM SG OBL | अच्छा ADJ FEM PL DIR | अच्छा ADJ FEM PL OBL
+बड़ा :: adjective :: बड़ा ADJ MASC SG DIR
+बड़े :: adjective :: बड़ा ADJ MASC SG OBL | बड़ा ADJ MASC PL DIR | बड़ा ADJ MASC PL OBL
+बड़ी :: adjective :: बड़ा ADJ FEM SG DIR | बड़ा ADJ FEM SG OBL | बड़ा ADJ FEM PL DIR | बड़ा ADJ FEM PL OBL
+छोटे :: adjective :: छोटा ADJ MASC SG OBL | छोटा ADJ MASC PL DIR | छोटा ADJ MASC PL OBL
+छोटी :: adjective :: छोटा ADJ FEM SG DIR | छोटा ADJ FEM SG OBL | छोटा ADJ FEM PL DIR | छोटा ADJ FEM PL OBL
+लंबी :: adjective :: लंबा ADJ FEM SG DIR | लंबा ADJ FEM SG OBL | लंबा ADJ FEM PL DIR | लंबा ADJ FEM PL OBL
+काले :: adjective :: काला ADJ MASC SG OBL | काला ADJ MASC PL DIR | काला ADJ MASC PL OBL
+पीली :: adjective :: पीला ADJ FEM SG DIR | पीला ADJ FEM SG OBL | पीला ADJ FEM PL DIR | पीला ADJ FEM PL OBL
+मोटा :: adjective :: मोटा ADJ MASC SG DIR
+ठंडा :: adjective :: ठंडा ADJ MASC SG DIR
+गंदे :: adjective :: गंदा ADJ MASC SG OBL | गंदा ADJ MASC PL DIR | गंदा ADJ MASC PL OBL
+सीधी :: adjective :: सीधा ADJ FEM SG DIR | सीधा ADJ FEM SG OBL | सीधा ADJ FEM PL DIR | सीधा ADJ FEM PL OBL
+नया :: adjective :: नया ADJ MASC SG DIR
+नए :: adjective :: नया ADJ MASC SG OBL | नया ADJ MASC PL DIR | नया ADJ MASC PL OBL
+नई :: adjective :: नया ADJ FEM SG DIR | नया ADJ FEM SG OBL | नया ADJ FEM PL DIR | नया ADJ FEM PL OBL
+सुंदर :: adjective :: सुंदर ADJ :: invariant adjective: no agreement features
+लाल :: adjective :: लाल ADJ
+साफ़ :: adjective :: साफ़ ADJ
+ख़राब :: adjective :: ख़राब ADJ
+गरीब :: adjective :: गरीब ADJ
+
+# ---------------- verbs: regular, consonant stems ----------------
+पढ़ना :: verb_regular :: पढ़ना VERB INF DIR
+पढ़ने :: verb_regular :: पढ़ना VERB INF OBL
+पढ़ता :: verb_regular :: पढ़ना VERB PART HAB MASC SG
+पढ़ते :: verb_regular :: पढ़ना VERB PART HAB MASC PL
+पढ़ती :: verb_regular :: पढ़ना VERB PART HAB FEM SG | पढ़ना VERB PART HAB FEM PL
+पढ़ा :: verb_regular :: पढ़ना VERB PART PERF MASC SG
+पढ़े :: verb_regular :: पढ़ना VERB PART PERF MASC PL | पढ़ना VERB FIN SUBJ 2 SG | पढ़ना VERB FIN SUBJ 3 SG
+पढ़ी :: verb_regular :: पढ़ना VERB PART PERF FEM SG
+पढ़ीं :: verb_regular :: पढ़ना VERB PART PERF FEM PL
+पढ़ूँ :: verb_regular :: पढ़ना VERB FIN SUBJ 1 SG
+पढ़ें :: verb_regular :: पढ़ना VERB FIN SUBJ 1 PL | पढ़ना VERB FIN SUBJ 2 PL | पढ़ना VERB FIN SUBJ 3 PL
+पढ़ो :: verb_regular :: पढ़ना VERB FIN SUBJ 2 PL | पढ़ना VERB FIN IMP 2 PL
+पढ़िए :: verb_regular :: पढ़ना VERB FIN IMP 2 PL
+पढ़ेगा :: verb_regular :: पढ़ना VERB FIN FUT IND 2 MASC SG | पढ़ना VERB FIN FUT IND 3 MASC SG
+पढ़ेंगे :: verb_regular :: पढ़ना VERB FIN FUT IND 1 MASC PL | पढ़ना VERB FIN FUT IND 2 MASC PL | पढ़ना VERB FIN FUT IND 3 MASC PL
+पढ़ूँगी :: verb_regular :: पढ़ना VERB FIN FUT IND 1 FEM SG
+पढ़ोगे :: verb_regular :: पढ़ना VERB FIN FUT IND 2 MASC PL
+पढ़ :: verb_regular :: पढ़ना VERB FIN IMP 2 SG
+लिखता :: verb_regular :: लिखना VERB PART HAB MASC SG
+लिखी :: verb_regular :: लिखना VERB PART PERF FEM SG
+लिखेगी :: verb_regular :: लिखना VERB FIN FUT IND 2 FEM SG | लिखना VERB FIN FUT IND 3 FEM SG
+लिखेंगी :: verb_regular :: लिखना VERB FIN FUT IND 1 FEM PL | लिखना VERB FIN FUT IND 2 FEM PL | लिखना VERB FIN FUT IND 3 FEM PL
+लिखो :: verb_regular :: लिखना VERB FIN SUBJ 2 PL | लिखना VERB FIN IMP 2 PL
+बोलते :: verb_regular :: बोलना VERB PART HAB MASC PL
+बोला :: verb_regular :: बोलना VERB PART PERF MASC SG
+बोलूँगा :: verb_regular :: बोलना VERB FIN FUT IND 1 MASC SG
+बोलिए :: verb_regular :: बोलना VERB FIN IMP 2 PL
+देखा :: verb_regular :: देखना VERB PART PERF MASC SG
+देखती :: verb_regular :: देखना VERB PART HAB FEM SG | देखना VERB PART HAB FEM PL
+देखेगा :: verb_regular :: देखना VERB FIN FUT IND 2 MASC SG | देखना VERB FIN FUT IND 3 MASC SG
+देखने :: verb_regular :: देखना VERB INF OBL
+चलो :: verb_regular :: चलना VERB FIN SUBJ 2 PL | चलना VERB FIN IMP 2 PL
+चलेंगे :: verb_regular :: चलना VERB FIN FUT IND 1 MASC PL | चलना VERB FIN FUT IND 2 MASC PL | चलना VERB FIN FUT IND 3 MASC PL
+चलती :: verb_regular :: चलना VERB PART HAB FEM SG | चलना VERB PART HAB FEM PL
+बैठिए :: verb_regular :: बैठना VERB FIN IMP 2 PL
+बैठा :: verb_regular :: बैठना VERB PART PERF MASC SG
+बैठें :: verb_regular :: बैठना VERB FIN SUBJ 1 PL | बैठना VERB FIN SUBJ 2 PL | बैठना VERB FIN SUBJ 3 PL
+सुनो :: verb_regular :: सुनना VERB FIN SUBJ 2 PL | सुनना VERB FIN IMP 2 PL
+सुना :: verb_regular :: सुनना VERB PART PERF MASC SG
+सुनेगी :: verb_regular :: सुनना VERB FIN FUT IND 2 FEM SG | सुनना VERB FIN FUT IND 3 FEM SG
+समझते :: verb_regular :: समझना VERB PART HAB MASC PL
+समझी :: verb_regular :: समझना VERB PART PERF FEM SG
+खेलना :: verb_regular :: खेलना VERB INF DIR
+खेलोगे :: verb_regular :: खेलना VERB FIN FUT IND 2 MASC PL
+मिला :: verb_regular :: मिलना VERB PART PERF MASC SG
+मिलेंगी :: verb_regular :: मिलना VERB FIN FUT IND 1 FEM PL | मिलना VERB FIN FUT IND 2 FEM PL | मिलना VERB FIN FUT IND 3 FEM PL
+रखो :: verb_regular :: रखना VERB FIN SUBJ 2 PL | रखना VERB FIN IMP 2 PL
+रखीं :: verb_regular :: रखना VERB PART PERF FEM PL
+दौड़ता :: verb_regular :: दौड़ना VERB PART HAB MASC SG
+दौड़ीं :: verb_regular :: दौड़ना VERB PART PERF FEM PL
+हँसती :: verb_regular :: हँसना VERB PART HAB FEM SG | हँसना VERB PART HAB FEM PL
+हँसेगा :: verb_regular :: हँसना VERB FIN FUT IND 2 MASC SG | हँसना VERB FIN FUT IND 3 MASC SG
+रहा :: verb_regular :: रहना VERB PART PERF MASC SG
+रहे :: verb_regular :: रहना VERB PART PERF MASC PL | रहना VERB FIN SUBJ 2 SG | रहना VERB FIN SUBJ 3 SG
+रहूँगा :: verb_regular :: रहना VERB FIN FUT IND 1 MASC SG
+बदलते :: verb_regular :: बदलना VERB PART HAB MASC PL
+बदला :: verb_regular :: बदलना VERB PART PERF MASC SG
+पहुँचे :: verb_regular :: पहुँचना VERB PART PERF MASC PL | पहुँचना VERB FIN SUBJ 2 SG | पहुँचना VERB FIN SUBJ 3 SG
+पहुँचेंगे :: verb_regular :: पहुँचना VERB FIN FUT IND 1 MASC PL | पहुँचना VERB FIN FUT IND 2 MASC PL | पहुँचना VERB FIN FUT IND 3 MASC PL
+लौटी :: verb_regular :: लौटना VERB PART PERF FEM SG
+लौटूँगी :: verb_regular :: लौटना VERB FIN FUT IND 1 FEM SG
+उठो :: verb_regular :: उठना VERB FIN SUBJ 2 PL | उठना VERB FIN IMP 2 PL
+सीखता :: verb_regular :: सीखना VERB PART HAB MASC SG
+सीखेंगे :: verb_regular :: सीखना VERB FIN FUT IND 1 MASC PL | सीखना VERB FIN FUT IND 2 MASC PL | सीखना VERB FIN FUT IND 3 MASC PL
+बनता :: verb_regular :: बनना VERB PART HAB MASC SG
+बनी :: verb_regular :: बनना VERB PART PERF FEM SG
+करेगा :: verb_regular :: करना VERB FIN FUT IND 2 MASC SG | करना VERB FIN FUT IND 3 MASC SG
+करता :: verb_regular :: करना VERB PART HAB MASC SG
+करो :: verb_regular :: करना VERB FIN SUBJ 2 PL | करना VERB FIN IMP 2 PL
+
+# ---------------- verbs: regular, vowel stems ----------------
+खाता :: verb_regular :: खाना VERB PART HAB MASC SG
+खाया :: verb_regular :: खाना VERB PART PERF MASC SG
+खाए :: verb_regular :: खाना VERB PART PERF MASC PL | खाना VERB FIN SUBJ 2 SG | खाना VERB FIN SUBJ 3 SG
+खाई :: verb_regular :: खाना VERB PART PERF FEM SG
+खाईं :: verb_regular :: खाना VERB PART PERF FEM PL
+खाऊँ :: verb_regular :: खाना VERB FIN SUBJ 1 SG
+खाएँ :: verb_regular :: खाना VERB FIN SUBJ 1 PL | खाना VERB FIN SUBJ 2 PL | खाना VERB FIN SUBJ 3 PL
+खाओ :: verb_regular :: खाना VERB FIN SUBJ 2 PL | खाना VERB FIN IMP 2 PL
+खाइए :: verb_regular :: खाना VERB FIN IMP 2 PL
+खाएगा :: verb_regular :: खाना VERB FIN FUT IND 2 MASC SG | खाना VERB FIN FUT IND 3 MASC SG
+खाऊँगी :: verb_regular :: खाना VERB FIN FUT IND 1 FEM SG
+खाएँगे :: verb_regular :: खाना VERB FIN FUT IND 1 MASC PL | खाना VERB FIN FUT IND 2 MASC PL | खाना VERB FIN FUT IND 3 MASC PL
+खाओगी :: verb_regular :: खाना VERB FIN FUT IND 2 FEM PL
+खा :: verb_regular :: खाना VERB FIN IMP 2 SG
+आया :: verb_regular :: आना VERB PART PERF MASC SG
+आई :: verb_regular :: आना VERB PART PERF FEM SG
+आएगा :: verb_regular :: आना VERB FIN FUT IND 2 MASC SG | आना VERB FIN FUT IND 3 MASC SG
+आइए :: verb_regular :: आना VERB FIN IMP 2 PL
+आते :: verb_regular :: आना VERB PART HAB MASC PL
+सोया :: verb_regular :: सोना VERB PART PERF MASC SG
+सोती :: verb_regular :: सोना VERB PART HAB FEM SG | सोना VERB PART HAB FEM PL
+सोएँगे :: verb_regular :: सोना VERB FIN FUT IND 1 MASC PL | सोना VERB FIN FUT IND 2 MASC PL | सोना VERB FIN FUT IND 3 MASC PL
+रोता :: verb_regular :: रोना VERB PART HAB MASC SG
+रोई :: verb_regular :: रोना VERB PART PERF FEM SG
+रोओ :: verb_regular :: रोना VERB FIN SUBJ 2 PL | रोना VERB FIN IMP 2 PL
+धोया :: verb_regular :: धोना VERB PART PERF MASC SG
+धोएगी :: verb_regular :: धोना VERB FIN FUT IND 2 FEM SG | धोना VERB FIN FUT IND 3 FEM SG
+पाया :: verb_regular :: पाना VERB PART PERF MASC SG
+पाते :: verb_regular :: पाना VERB PART HAB MASC PL
+बनाया :: verb_regular :: बनाना VERB PART PERF MASC SG
+बनाएगा :: verb_regular :: बनाना VERB FIN FUT IND 2 MASC SG | बनाना VERB FIN FUT IND 3 MASC SG
+बनाती :: verb_regular :: बनाना VERB PART HAB FEM SG | बनाना VERB PART HAB FEM PL
+लाओ :: verb_regular :: लाना VERB FIN SUBJ 2 PL | लाना VERB FIN IMP 2 PL
+लाया :: verb_regular :: लाना VERB PART PERF MASC SG
+गाता :: verb_regular :: गाना VERB PART HAB MASC SG
+गाएँगे :: verb_regular :: गाना VERB FIN FUT IND 1 MASC PL | गाना VERB FIN FUT IND 2 MASC PL | गाना VERB FIN FUT IND 3 MASC PL
+जाता :: verb_regular :: जाना VERB PART HAB MASC SG
+जाएगी :: verb_regular :: जाना VERB FIN FUT IND 2 FEM SG | जाना VERB FIN FUT IND 3 FEM SG
+जाओ :: verb_regular :: जाना VERB FIN SUBJ 2 PL | जाना VERB FIN IMP 2 PL
+होता :: verb_regular :: होना VERB PART HAB MASC SG
+
+# ---------------- verbs: irregular / stem-changing ----------------
+पीता :: verb_irregular :: पीना VERB PART HAB MASC SG
+पिया :: verb_irregular :: पीना VERB PART PERF MASC SG :: stem vowel shortens before the glide
+पिए :: verb_irregular :: पीना VERB PART PERF MASC PL | पीना VERB FIN SUBJ 2 SG | पीना VERB FIN SUBJ 3 SG
+पी :: verb_irregular :: पीना VERB PART PERF FEM SG | पीना VERB FIN IMP 2 SG
+पीं :: verb_irregular :: पीना VERB PART PERF FEM PL
+पिऊँगा :: verb_irregular :: पीना VERB FIN FUT IND 1 MASC SG
+पियो :: verb_irregular :: पीना VERB FIN SUBJ 2 PL | पीना VERB FIN IMP 2 PL
+पीजिए :: verb_irregular :: पीना VERB FIN IMP 2 PL
+पिएगा :: verb_irregular :: पीना VERB FIN FUT IND 2 MASC SG | पीना VERB FIN FUT IND 3 MASC SG
+जिया :: verb_irregular :: जीना VERB PART PERF MASC SG
+सीती :: verb_irregular :: सीना VERB PART HAB FEM SG | सीना VERB PART HAB FEM PL
+दिया :: verb_irregular :: देना VERB PART PERF MASC SG
+दिए :: verb_irregular :: देना VERB PART PERF MASC PL
+दी :: verb_irregular :: देना VERB PART PERF FEM SG
+दीं :: verb_irregular :: देना VERB PART PERF FEM PL
+दूँ :: verb_irregular :: देना VERB FIN SUBJ 1 SG
+दे :: verb_irregular :: देना VERB FIN SUBJ 2 SG | देना VERB FIN SUBJ 3 SG | देना VERB FIN IMP 2 SG
+दो :: verb_irregular :: देना VERB FIN SUBJ 2 PL | देना VERB FIN IMP 2 PL :: homograph of the numeral दो 'two' (numerals are outside the scheme)
+दीजिए :: verb_irregular :: देना VERB FIN IMP 2 PL
+देगा :: verb_irregular :: देना VERB FIN FUT IND 2 MASC SG | देना VERB FIN FUT IND 3 MASC SG
+देंगे :: verb_irregular :: देना VERB FIN FUT IND 1 MASC PL | देना VERB FIN FUT IND 2 MASC PL | देना VERB FIN FUT IND 3 MASC PL
+देता :: verb_irregular :: देना VERB PART HAB MASC SG
+लिया :: verb_irregular :: लेना VERB PART PERF MASC SG
+ली :: verb_irregular :: लेना VERB PART PERF FEM SG
+लेंगे :: verb_irregular :: लेना VERB FIN FUT IND 1 MASC PL | लेना VERB FIN FUT IND 2 MASC PL | लेना VERB FIN FUT IND 3 MASC PL
+लीजिए :: verb_irregular :: लेना VERB FIN IMP 2 PL
+लेते :: verb_irregular :: लेना VERB PART HAB MASC PL
+लूँगी :: verb_irregular :: लेना VERB FIN FUT IND 1 FEM SG
+किया :: verb_irregular :: करना VERB PART PERF MASC SG
+किए :: verb_irregular :: करना VERB PART PERF MASC PL
+की :: verb_irregular :: करना VERB PART PERF FEM SG :: the genitive postposition की is outside the scheme
+कीं :: verb_irregular :: करना VERB PART PERF FEM PL
+कीजिए :: verb_irregular :: करना VERB FIN IMP 2 PL
+गया :: verb_irregular :: जाना VERB PART PERF MASC SG
+गए :: verb_irregular :: जाना VERB PART PERF MASC PL
+गई :: verb_irregular :: जाना VERB PART PERF FEM SG
+गईं :: verb_irregular :: जाना VERB PART PERF FEM PL
+हुआ :: verb_irregular :: होना VERB PART PERF MASC SG
+हुई :: verb_irregular :: होना VERB PART PERF FEM SG
+हुए :: verb_irregular :: होना VERB PART PERF MASC PL
+है :: verb_irregular :: होना AUX FIN PRES IND 2 SG | होना AUX FIN PRES IND 3 SG
+हैं :: verb_irregular :: होना AUX FIN PRES IND 1 PL | होना AUX FIN PRES IND 2 PL | होना AUX FIN PRES IND 3 PL
+हूँ :: verb_irregular :: होना AUX FIN PRES IND 1 SG
+था :: verb_irregular :: होना AUX FIN PAST IND MASC SG
+थे :: verb_irregular :: होना AUX FIN PAST IND MASC PL
+थी :: verb_irregular :: होना AUX FIN PAST IND FEM SG
+थीं :: verb_irregular :: होना AUX FIN PAST IND FEM PL
+होगा :: verb_irregular :: होना VERB FIN FUT IND 2 MASC SG | होना VERB FIN FUT IND 3 MASC SG
+होंगे :: verb_irregular :: होना VERB FIN FUT IND 1 MASC PL | होना VERB FIN FUT IND 2 MASC PL | होना VERB FIN FUT IND 3 MASC PL
+हो :: verb_irregular :: होना VERB FIN IMP 2 SG | होना VERB FIN SUBJ 2 SG | होना VERB FIN SUBJ 3 SG | होना AUX FIN PRES IND 2 PL
+हों :: verb_irregular :: होना VERB FIN SUBJ 1 PL | होना VERB FIN SUBJ 2 PL | होना VERB FIN SUBJ 3 PL
+
+# ---------------- lexical ambiguity (two lemmas) ----------------
+खाना :: lexical_ambiguity :: खाना NOUN MASC SG DIR | खाना VERB INF DIR :: 'food' vs 'to eat'
+खाने :: lexical_ambiguity :: खाना NOUN MASC SG OBL | खाना NOUN MASC PL DIR | खाना VERB INF OBL
+खानों :: lexical_ambiguity :: खाना NOUN MASC PL OBL
+गाना :: lexical_ambiguity :: गाना NOUN MASC SG DIR | गाना VERB INF DIR :: 'song' vs 'to sing'
+गाने :: lexical_ambiguity :: गाना NOUN MASC SG OBL | गाना NOUN MASC PL DIR | गाना VERB INF OBL
+सोना :: lexical_ambiguity :: सोना NOUN MASC SG DIR | सोना VERB INF DIR :: 'gold' vs 'to sleep'
+सोने :: lexical_ambiguity :: सोना NOUN MASC SG OBL | सोना VERB INF OBL :: 'gold' is a mass noun (no plural reading)
+बना :: lexical_ambiguity :: बनना VERB PART PERF MASC SG | बनाना VERB FIN IMP 2 SG
+जीता :: lexical_ambiguity :: जीना VERB PART HAB MASC SG | जीतना VERB PART PERF MASC SG :: 'lives' vs 'won'
+
+# ---------------- spelling variants ----------------
+लड़कियां :: spelling_variant :: लड़की NOUN FEM PL DIR :: anusvara instead of chandrabindu
+दरवाजों :: spelling_variant :: दरवाज़ा NOUN MASC PL OBL :: nukta omitted
+नये :: spelling_variant :: नया ADJ MASC SG OBL | नया ADJ MASC PL DIR | नया ADJ MASC PL OBL :: ये for ए
+नयी :: spelling_variant :: नया ADJ FEM SG DIR | नया ADJ FEM SG OBL | नया ADJ FEM PL DIR | नया ADJ FEM PL OBL :: यी for ई
+खाये :: spelling_variant :: खाना VERB PART PERF MASC PL | खाना VERB FIN SUBJ 2 SG | खाना VERB FIN SUBJ 3 SG
+खायी :: spelling_variant :: खाना VERB PART PERF FEM SG
+गये :: spelling_variant :: जाना VERB PART PERF MASC PL
+खराब :: spelling_variant :: ख़राब ADJ :: nukta omitted
+खाएंगे :: spelling_variant :: खाना VERB FIN FUT IND 1 MASC PL | खाना VERB FIN FUT IND 2 MASC PL | खाना VERB FIN FUT IND 3 MASC PL
+पीएगा :: spelling_variant :: पीना VERB FIN FUT IND 2 MASC SG | पीना VERB FIN FUT IND 3 MASC SG :: unshortened stem vowel; not handled by normalisation
+
+# ---------------- OOV: lemma not in the lexicon ----------------
+मकानों :: oov :: मकान NOUN MASC PL OBL
+बिल्लियाँ :: oov :: बिल्ली NOUN FEM PL DIR
+बिल्लियों :: oov :: बिल्ली NOUN FEM PL OBL
+पत्तों :: oov :: पत्ता NOUN MASC PL OBL
+झंडे :: oov :: झंडा NOUN MASC SG OBL | झंडा NOUN MASC PL DIR
+खिलौनों :: oov :: खिलौना NOUN MASC PL OBL
+दीवारें :: oov :: दीवार NOUN FEM PL DIR
+चीज़ें :: oov :: चीज़ NOUN FEM PL DIR
+कहानियाँ :: oov :: कहानी NOUN FEM PL DIR
+सब्ज़ियों :: oov :: सब्ज़ी NOUN FEM PL OBL
+घड़ियाँ :: oov :: घड़ी NOUN FEM PL DIR
+छात्रों :: oov :: छात्र NOUN MASC PL OBL
+मज़दूरों :: oov :: मज़दूर NOUN MASC PL OBL
+लताएँ :: oov :: लता NOUN FEM PL DIR
+औरतें :: oov :: औरत NOUN FEM PL DIR
+पहाड़ों :: oov :: पहाड़ NOUN MASC PL OBL
+तैरता :: oov :: तैरना VERB PART HAB MASC SG
+नाचती :: oov :: नाचना VERB PART HAB FEM SG | नाचना VERB PART HAB FEM PL
+कूदेगा :: oov :: कूदना VERB FIN FUT IND 2 MASC SG | कूदना VERB FIN FUT IND 3 MASC SG
+पूछा :: oov :: पूछना VERB PART PERF MASC SG
+भेजेंगे :: oov :: भेजना VERB FIN FUT IND 1 MASC PL | भेजना VERB FIN FUT IND 2 MASC PL | भेजना VERB FIN FUT IND 3 MASC PL
+सोचो :: oov :: सोचना VERB FIN SUBJ 2 PL | सोचना VERB FIN IMP 2 PL
+सिखाया :: oov :: सिखाना VERB PART PERF MASC SG
+बताइए :: oov :: बताना VERB FIN IMP 2 PL
+गिरना :: oov :: गिरना VERB INF DIR
+खोलने :: oov :: खोलना VERB INF OBL
+खिलाना :: oov :: खिलाना VERB INF DIR
+गीले :: oov :: गीला ADJ MASC SG OBL | गीला ADJ MASC PL DIR | गीला ADJ MASC PL OBL
+मीठी :: oov :: मीठा ADJ FEM SG DIR | मीठा ADJ FEM SG OBL | मीठा ADJ FEM PL DIR | मीठा ADJ FEM PL OBL
+
+# ---------------- out of scope ----------------
+खाकर :: out_of_scope :: खाना VERB CONV :: conjunctive participle -कर not implemented
+पढ़कर :: out_of_scope :: पढ़ना VERB CONV
+लड़को :: out_of_scope :: लड़का NOUN MASC PL VOC :: vocative not implemented
+बच्चो :: out_of_scope :: बच्चा NOUN MASC PL VOC
+अच्छाई :: out_of_scope :: अच्छाई NOUN FEM SG DIR | अच्छाई NOUN FEM SG OBL :: derivational -ई (अच्छा -> अच्छाई); lemma not in lexicon
+लड़कपन :: out_of_scope :: लड़कपन NOUN MASC SG DIR | लड़कपन NOUN MASC SG OBL :: derivational -पन
+पढ़ाई :: out_of_scope :: पढ़ाई NOUN FEM SG DIR | पढ़ाई NOUN FEM SG OBL | पढ़ाना VERB PART PERF FEM SG :: derivational noun; also perfective of causative पढ़ाना
+मिठास :: out_of_scope :: मिठास NOUN FEM SG DIR | मिठास NOUN FEM SG OBL :: derivational -आस
+दोस्ती :: out_of_scope :: दोस्ती NOUN FEM SG DIR | दोस्ती NOUN FEM SG OBL :: derivational -ई
+करा :: out_of_scope :: करना VERB PART PERF MASC SG :: colloquial regularised perfective (standard: किया)

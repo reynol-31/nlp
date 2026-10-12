@@ -1,0 +1,300 @@
+{
+  "meta": {
+    "description": "Inflectional paradigms for the supported subset of Hindi morphology. Both analyzers read this file: the rule-based analyzer applies each suffix entry as an analysis rule (strip surface suffix -> restore lemma ending -> validate in lexicon); the FST compiler turns each entry into suffix arcs of a continuation network.",
+    "conventions": {
+      "truncate": "String removed from the end of the lemma to obtain the inflectional stem. Surface form = stem + surface suffix; lemma = stem + truncate.",
+      "tags": "Feature values from src/schema.py. POS is given at paradigm level.",
+      "lemma_regex": "Regular expression (on normalised text) that every lemma of the paradigm must match. Used to validate the lexicon and to constrain guesses for unknown words.",
+      "guessable / guess_prior": "Only used by the rule-based analyzer's optional unknown-word guesser. Priors were set by hand and adjusted only by inspecting the DEVELOPMENT split.",
+      "spelling": "Suffixes are written in standard spelling (chandrabindu, ए/ई). Normalisation (src/normalization.py) is applied when the file is loaded."
+    },
+    "version": "1.1",
+    "tuning_log": [
+      "v1.0: initial hand-set guess priors (V_CONS 0.30, V_VOWEL 0.15).",
+      "v1.1 (after inspecting DEV errors only): OOV plural nouns such as दीवारें, लताएँ, झंडे were guessed as verbs because shared suffixes (-ें, -एँ, -े) tie on length and verb priors were highest. Lowered V_CONS to 0.12 and V_VOWEL to 0.05 so nominal readings win ties. Dev effect: +3 correct, -1 (पूछा is now guessed as a noun). The test split was not consulted."
+    ]
+  },
+  "guesser": {
+    "max_hypotheses": 2,
+    "min_stem_length": 2
+  },
+  "paradigms": {
+    "N_M_AA": {
+      "pos": "NOUN",
+      "description": "Masculine nouns in -आ that inflect (marked masculine): लड़का, कमरा. -आ alternates with -ए (oblique sg / direct pl) and -ओं (oblique pl).",
+      "truncate": "ा",
+      "lemma_regex": "^.*[क-ह़]ा$",
+      "guessable": true,
+      "guess_prior": 0.25,
+      "suffixes": [
+        {"slot": "SG_DIR", "surface": "ा", "tags": ["MASC", "SG", "DIR"], "label": "singular direct (citation form) -आ"},
+        {"slot": "SG_OBL", "surface": "े", "tags": ["MASC", "SG", "OBL"], "label": "singular oblique: -आ -> -ए"},
+        {"slot": "PL_DIR", "surface": "े", "tags": ["MASC", "PL", "DIR"], "label": "plural direct: -आ -> -ए"},
+        {"slot": "PL_OBL", "surface": "ों", "tags": ["MASC", "PL", "OBL"], "label": "plural oblique: -आ -> -ओं"}
+      ]
+    },
+    "N_M_AA_INV": {
+      "pos": "NOUN",
+      "description": "Masculine nouns in -आ that do NOT change -आ (kinship terms, Sanskrit loans): राजा, पिता. Lexical exception class: only the oblique plural adds -ओं.",
+      "truncate": "",
+      "lemma_regex": "^.+ा$",
+      "guessable": false,
+      "guess_prior": 0.0,
+      "suffixes": [
+        {"slot": "SG_DIR", "surface": "", "tags": ["MASC", "SG", "DIR"], "label": "singular direct (unchanged)"},
+        {"slot": "SG_OBL", "surface": "", "tags": ["MASC", "SG", "OBL"], "label": "singular oblique (unchanged)"},
+        {"slot": "PL_DIR", "surface": "", "tags": ["MASC", "PL", "DIR"], "label": "plural direct (unchanged)"},
+        {"slot": "PL_OBL", "surface": "ओं", "tags": ["MASC", "PL", "OBL"], "label": "plural oblique: + -ओं"}
+      ]
+    },
+    "N_M_CONS": {
+      "pos": "NOUN",
+      "description": "Masculine nouns ending in a consonant (unmarked): घर, दिन. Only the oblique plural is overtly marked (-ओं).",
+      "truncate": "",
+      "lemma_regex": "^.*[क-ह़]$",
+      "guessable": true,
+      "guess_prior": 0.30,
+      "suffixes": [
+        {"slot": "SG_DIR", "surface": "", "tags": ["MASC", "SG", "DIR"], "label": "singular direct (zero suffix)"},
+        {"slot": "SG_OBL", "surface": "", "tags": ["MASC", "SG", "OBL"], "label": "singular oblique (zero suffix)"},
+        {"slot": "PL_DIR", "surface": "", "tags": ["MASC", "PL", "DIR"], "label": "plural direct (zero suffix)"},
+        {"slot": "PL_OBL", "surface": "ों", "tags": ["MASC", "PL", "OBL"], "label": "plural oblique: + -ओं"}
+      ]
+    },
+    "N_M_II": {
+      "pos": "NOUN",
+      "description": "Masculine nouns in -ई: आदमी, हाथी. Oblique plural -ई -> -इयों (vowel shortening + glide).",
+      "truncate": "ी",
+      "lemma_regex": "^.+ी$",
+      "guessable": true,
+      "guess_prior": 0.05,
+      "suffixes": [
+        {"slot": "SG_DIR", "surface": "ी", "tags": ["MASC", "SG", "DIR"], "label": "singular direct -ई"},
+        {"slot": "SG_OBL", "surface": "ी", "tags": ["MASC", "SG", "OBL"], "label": "singular oblique -ई (unchanged)"},
+        {"slot": "PL_DIR", "surface": "ी", "tags": ["MASC", "PL", "DIR"], "label": "plural direct -ई (unchanged)"},
+        {"slot": "PL_OBL", "surface": "ियों", "tags": ["MASC", "PL", "OBL"], "label": "plural oblique: -ई -> -इयों"}
+      ]
+    },
+    "N_M_UU": {
+      "pos": "NOUN",
+      "description": "Masculine nouns in -ऊ: आलू, डाकू. Oblique plural -ऊ -> -उओं (vowel shortening).",
+      "truncate": "ू",
+      "lemma_regex": "^.+ू$",
+      "guessable": true,
+      "guess_prior": 0.03,
+      "suffixes": [
+        {"slot": "SG_DIR", "surface": "ू", "tags": ["MASC", "SG", "DIR"], "label": "singular direct -ऊ"},
+        {"slot": "SG_OBL", "surface": "ू", "tags": ["MASC", "SG", "OBL"], "label": "singular oblique -ऊ (unchanged)"},
+        {"slot": "PL_DIR", "surface": "ू", "tags": ["MASC", "PL", "DIR"], "label": "plural direct -ऊ (unchanged)"},
+        {"slot": "PL_OBL", "surface": "ुओं", "tags": ["MASC", "PL", "OBL"], "label": "plural oblique: -ऊ -> -उओं"}
+      ]
+    },
+    "N_F_II": {
+      "pos": "NOUN",
+      "description": "Feminine nouns in -ई: लड़की, नदी. Plural -ई -> -इयाँ (direct) / -इयों (oblique).",
+      "truncate": "ी",
+      "lemma_regex": "^.+ी$",
+      "guessable": true,
+      "guess_prior": 0.20,
+      "suffixes": [
+        {"slot": "SG_DIR", "surface": "ी", "tags": ["FEM", "SG", "DIR"], "label": "singular direct -ई"},
+        {"slot": "SG_OBL", "surface": "ी", "tags": ["FEM", "SG", "OBL"], "label": "singular oblique -ई (unchanged)"},
+        {"slot": "PL_DIR", "surface": "ियाँ", "tags": ["FEM", "PL", "DIR"], "label": "plural direct: -ई -> -इयाँ"},
+        {"slot": "PL_OBL", "surface": "ियों", "tags": ["FEM", "PL", "OBL"], "label": "plural oblique: -ई -> -इयों"}
+      ]
+    },
+    "N_F_IYA": {
+      "pos": "NOUN",
+      "description": "Feminine diminutives in -इया: चिड़िया, गुड़िया. Plural direct adds nasalisation (-इयाँ), oblique -इयों.",
+      "truncate": "ा",
+      "lemma_regex": "^.+िया$",
+      "guessable": true,
+      "guess_prior": 0.03,
+      "suffixes": [
+        {"slot": "SG_DIR", "surface": "ा", "tags": ["FEM", "SG", "DIR"], "label": "singular direct -इया"},
+        {"slot": "SG_OBL", "surface": "ा", "tags": ["FEM", "SG", "OBL"], "label": "singular oblique -इया (unchanged)"},
+        {"slot": "PL_DIR", "surface": "ाँ", "tags": ["FEM", "PL", "DIR"], "label": "plural direct: -इया -> -इयाँ"},
+        {"slot": "PL_OBL", "surface": "ों", "tags": ["FEM", "PL", "OBL"], "label": "plural oblique: -इया -> -इयों"}
+      ]
+    },
+    "N_F_CONS": {
+      "pos": "NOUN",
+      "description": "Feminine nouns ending in a consonant: किताब, बात. Plural direct -एँ, oblique -ओं (written as vowel signs).",
+      "truncate": "",
+      "lemma_regex": "^.*[क-ह़]$",
+      "guessable": true,
+      "guess_prior": 0.20,
+      "suffixes": [
+        {"slot": "SG_DIR", "surface": "", "tags": ["FEM", "SG", "DIR"], "label": "singular direct (zero suffix)"},
+        {"slot": "SG_OBL", "surface": "", "tags": ["FEM", "SG", "OBL"], "label": "singular oblique (zero suffix)"},
+        {"slot": "PL_DIR", "surface": "ें", "tags": ["FEM", "PL", "DIR"], "label": "plural direct: + -एँ"},
+        {"slot": "PL_OBL", "surface": "ों", "tags": ["FEM", "PL", "OBL"], "label": "plural oblique: + -ओं"}
+      ]
+    },
+    "N_F_AA": {
+      "pos": "NOUN",
+      "description": "Feminine nouns in -आ (mostly Sanskrit loans): भाषा, माला. Plural suffixes are written as full vowel letters after the -आ (भाषाएँ, भाषाओं).",
+      "truncate": "",
+      "lemma_regex": "^.+ा$",
+      "guessable": true,
+      "guess_prior": 0.08,
+      "suffixes": [
+        {"slot": "SG_DIR", "surface": "", "tags": ["FEM", "SG", "DIR"], "label": "singular direct (zero suffix)"},
+        {"slot": "SG_OBL", "surface": "", "tags": ["FEM", "SG", "OBL"], "label": "singular oblique (zero suffix)"},
+        {"slot": "PL_DIR", "surface": "एँ", "tags": ["FEM", "PL", "DIR"], "label": "plural direct: + -एँ"},
+        {"slot": "PL_OBL", "surface": "ओं", "tags": ["FEM", "PL", "OBL"], "label": "plural oblique: + -ओं"}
+      ]
+    },
+    "N_F_UU": {
+      "pos": "NOUN",
+      "description": "Feminine nouns in -ऊ: बहू. Plural with vowel shortening -ऊ -> -उएँ / -उओं.",
+      "truncate": "ू",
+      "lemma_regex": "^.+ू$",
+      "guessable": true,
+      "guess_prior": 0.01,
+      "suffixes": [
+        {"slot": "SG_DIR", "surface": "ू", "tags": ["FEM", "SG", "DIR"], "label": "singular direct -ऊ"},
+        {"slot": "SG_OBL", "surface": "ू", "tags": ["FEM", "SG", "OBL"], "label": "singular oblique -ऊ (unchanged)"},
+        {"slot": "PL_DIR", "surface": "ुएँ", "tags": ["FEM", "PL", "DIR"], "label": "plural direct: -ऊ -> -उएँ"},
+        {"slot": "PL_OBL", "surface": "ुओं", "tags": ["FEM", "PL", "OBL"], "label": "plural oblique: -ऊ -> -उओं"}
+      ]
+    },
+    "N_F_U": {
+      "pos": "NOUN",
+      "description": "Feminine nouns in short -उ: वस्तु, धातु. Plural adds full-vowel -एँ / -ओं.",
+      "truncate": "",
+      "lemma_regex": "^.+ु$",
+      "guessable": true,
+      "guess_prior": 0.02,
+      "suffixes": [
+        {"slot": "SG_DIR", "surface": "", "tags": ["FEM", "SG", "DIR"], "label": "singular direct (zero suffix)"},
+        {"slot": "SG_OBL", "surface": "", "tags": ["FEM", "SG", "OBL"], "label": "singular oblique (zero suffix)"},
+        {"slot": "PL_DIR", "surface": "एँ", "tags": ["FEM", "PL", "DIR"], "label": "plural direct: + -एँ"},
+        {"slot": "PL_OBL", "surface": "ओं", "tags": ["FEM", "PL", "OBL"], "label": "plural oblique: + -ओं"}
+      ]
+    },
+    "ADJ_AA": {
+      "pos": "ADJ",
+      "description": "Inflecting (marked) adjectives in -आ: अच्छा, बड़ा. Agree with the noun: -आ masc sg direct, -ए other masculine forms, -ई all feminine forms.",
+      "truncate": "ा",
+      "lemma_regex": "^.*[क-ह़]ा$",
+      "guessable": true,
+      "guess_prior": 0.10,
+      "suffixes": [
+        {"slot": "M_SG_DIR", "surface": "ा", "tags": ["MASC", "SG", "DIR"], "label": "masc sg direct -आ"},
+        {"slot": "M_SG_OBL", "surface": "े", "tags": ["MASC", "SG", "OBL"], "label": "masc sg oblique -ए"},
+        {"slot": "M_PL_DIR", "surface": "े", "tags": ["MASC", "PL", "DIR"], "label": "masc pl direct -ए"},
+        {"slot": "M_PL_OBL", "surface": "े", "tags": ["MASC", "PL", "OBL"], "label": "masc pl oblique -ए"},
+        {"slot": "F_SG_DIR", "surface": "ी", "tags": ["FEM", "SG", "DIR"], "label": "fem sg direct -ई"},
+        {"slot": "F_SG_OBL", "surface": "ी", "tags": ["FEM", "SG", "OBL"], "label": "fem sg oblique -ई"},
+        {"slot": "F_PL_DIR", "surface": "ी", "tags": ["FEM", "PL", "DIR"], "label": "fem pl direct -ई"},
+        {"slot": "F_PL_OBL", "surface": "ी", "tags": ["FEM", "PL", "OBL"], "label": "fem pl oblique -ई"}
+      ]
+    },
+    "ADJ_YA": {
+      "pos": "ADJ",
+      "description": "Adjectives in -या (नया): the glide disappears before -ए/-ई (नए, नई). Closed class.",
+      "truncate": "या",
+      "lemma_regex": "^.+या$",
+      "guessable": false,
+      "guess_prior": 0.0,
+      "suffixes": [
+        {"slot": "M_SG_DIR", "surface": "या", "tags": ["MASC", "SG", "DIR"], "label": "masc sg direct -या"},
+        {"slot": "M_SG_OBL", "surface": "ए", "tags": ["MASC", "SG", "OBL"], "label": "masc sg oblique: -या -> -ए"},
+        {"slot": "M_PL_DIR", "surface": "ए", "tags": ["MASC", "PL", "DIR"], "label": "masc pl direct: -या -> -ए"},
+        {"slot": "M_PL_OBL", "surface": "ए", "tags": ["MASC", "PL", "OBL"], "label": "masc pl oblique: -या -> -ए"},
+        {"slot": "F_SG_DIR", "surface": "ई", "tags": ["FEM", "SG", "DIR"], "label": "fem sg direct: -या -> -ई"},
+        {"slot": "F_SG_OBL", "surface": "ई", "tags": ["FEM", "SG", "OBL"], "label": "fem sg oblique: -या -> -ई"},
+        {"slot": "F_PL_DIR", "surface": "ई", "tags": ["FEM", "PL", "DIR"], "label": "fem pl direct: -या -> -ई"},
+        {"slot": "F_PL_OBL", "surface": "ई", "tags": ["FEM", "PL", "OBL"], "label": "fem pl oblique: -या -> -ई"}
+      ]
+    },
+    "ADJ_INV": {
+      "pos": "ADJ",
+      "description": "Invariant (unmarked) adjectives: सुंदर, लाल. They never inflect, so agreement features are NA.",
+      "truncate": "",
+      "lemma_regex": "^.+$",
+      "guessable": false,
+      "guess_prior": 0.0,
+      "suffixes": [
+        {"slot": "INV", "surface": "", "tags": [], "label": "invariant adjective (no inflection)"}
+      ]
+    },
+    "V_CONS": {
+      "pos": "VERB",
+      "description": "Verbs whose stem ends in a consonant: पढ़ना (stem पढ़). Suffixes are written as vowel signs (पढ़ा, पढ़े, पढ़ूँगा).",
+      "truncate": "ना",
+      "lemma_regex": "^.*[क-ह़]ना$",
+      "guessable": true,
+      "guess_prior": 0.12,
+      "slot_column": "V_CONS"
+    },
+    "V_VOWEL": {
+      "pos": "VERB",
+      "description": "Verbs whose stem ends in -आ or -ओ: खाना (stem खा), सोना (stem सो). Vowel-initial suffixes are written as full vowel letters, the perfective inserts a glide (खाया).",
+      "truncate": "ना",
+      "lemma_regex": "^.*[ाोआओ]ना$",
+      "guessable": true,
+      "guess_prior": 0.05,
+      "slot_column": "V_VOWEL"
+    },
+    "V_II": {
+      "pos": "VERB",
+      "description": "Verbs whose stem ends in -ई: पीना (stem पी). The stem vowel shortens before vowel-initial suffixes (पिया, पिएगा, पियो).",
+      "truncate": "ीना",
+      "lemma_regex": "^.+ीना$",
+      "guessable": true,
+      "guess_prior": 0.01,
+      "slot_column": "V_II"
+    },
+    "V_E": {
+      "pos": "VERB",
+      "description": "देना / लेना: stem -ए; perfective -इया (दिया), subjunctive/future with -ऊँ/-ओ replacing the stem vowel (दूँ, दो), polite imperative -ईजिए.",
+      "truncate": "ेना",
+      "lemma_regex": "^.+ेना$",
+      "guessable": false,
+      "guess_prior": 0.0,
+      "slot_column": "V_E"
+    }
+  },
+  "verb_slots": {
+    "description": "One row per inflectional slot; one surface column per verb paradigm (surface = suffix after the stem).",
+    "columns": ["V_CONS", "V_VOWEL", "V_II", "V_E"],
+    "rows": [
+      {"slot": "INF_DIR",    "tags": ["INF", "DIR"],                      "label": "infinitive, direct",               "surface": ["ना", "ना", "ीना", "ेना"]},
+      {"slot": "INF_OBL",    "tags": ["INF", "OBL"],                      "label": "infinitive, oblique",              "surface": ["ने", "ने", "ीने", "ेने"]},
+      {"slot": "HAB_M_SG",   "tags": ["PART", "HAB", "MASC", "SG"],       "label": "habitual participle masc sg",      "surface": ["ता", "ता", "ीता", "ेता"]},
+      {"slot": "HAB_M_PL",   "tags": ["PART", "HAB", "MASC", "PL"],       "label": "habitual participle masc pl",      "surface": ["ते", "ते", "ीते", "ेते"]},
+      {"slot": "HAB_F_SG",   "tags": ["PART", "HAB", "FEM", "SG"],        "label": "habitual participle fem sg",       "surface": ["ती", "ती", "ीती", "ेती"]},
+      {"slot": "HAB_F_PL",   "tags": ["PART", "HAB", "FEM", "PL"],        "label": "habitual participle fem pl",       "surface": ["ती", "ती", "ीती", "ेती"]},
+      {"slot": "PERF_M_SG",  "tags": ["PART", "PERF", "MASC", "SG"],      "label": "perfective participle masc sg",    "surface": ["ा", "या", "िया", "िया"]},
+      {"slot": "PERF_M_PL",  "tags": ["PART", "PERF", "MASC", "PL"],      "label": "perfective participle masc pl",    "surface": ["े", "ए", "िए", "िए"]},
+      {"slot": "PERF_F_SG",  "tags": ["PART", "PERF", "FEM", "SG"],       "label": "perfective participle fem sg",     "surface": ["ी", "ई", "ी", "ी"]},
+      {"slot": "PERF_F_PL",  "tags": ["PART", "PERF", "FEM", "PL"],       "label": "perfective participle fem pl",     "surface": ["ीं", "ईं", "ीं", "ीं"]},
+      {"slot": "SUBJ_1SG",   "tags": ["FIN", "SUBJ", "1", "SG"],          "label": "subjunctive 1sg",                  "surface": ["ूँ", "ऊँ", "िऊँ", "ूँ"]},
+      {"slot": "SUBJ_2SG",   "tags": ["FIN", "SUBJ", "2", "SG"],          "label": "subjunctive 2sg (तू)",             "surface": ["े", "ए", "िए", "े"]},
+      {"slot": "SUBJ_3SG",   "tags": ["FIN", "SUBJ", "3", "SG"],          "label": "subjunctive 3sg",                  "surface": ["े", "ए", "िए", "े"]},
+      {"slot": "SUBJ_1PL",   "tags": ["FIN", "SUBJ", "1", "PL"],          "label": "subjunctive 1pl",                  "surface": ["ें", "एँ", "िएँ", "ें"]},
+      {"slot": "SUBJ_2PL_HON","tags": ["FIN", "SUBJ", "2", "PL"],         "label": "subjunctive 2pl honorific (आप)",   "surface": ["ें", "एँ", "िएँ", "ें"]},
+      {"slot": "SUBJ_3PL",   "tags": ["FIN", "SUBJ", "3", "PL"],          "label": "subjunctive 3pl",                  "surface": ["ें", "एँ", "िएँ", "ें"]},
+      {"slot": "SUBJ_2PL",   "tags": ["FIN", "SUBJ", "2", "PL"],          "label": "subjunctive 2pl familiar (तुम)",   "surface": ["ो", "ओ", "ियो", "ो"]},
+      {"slot": "IMP_2SG",    "tags": ["FIN", "IMP", "2", "SG"],           "label": "imperative 2sg intimate (bare stem)", "surface": ["", "", "ी", "े"]},
+      {"slot": "IMP_2PL",    "tags": ["FIN", "IMP", "2", "PL"],           "label": "imperative 2pl familiar",          "surface": ["ो", "ओ", "ियो", "ो"]},
+      {"slot": "IMP_2PL_POL","tags": ["FIN", "IMP", "2", "PL"],           "label": "imperative 2pl polite (-इए)",      "surface": ["िए", "इए", "ीजिए", "ीजिए"]},
+      {"slot": "FUT_1SG_M",  "tags": ["FIN", "FUT", "IND", "1", "MASC", "SG"], "label": "future 1sg masc",          "surface": ["ूँगा", "ऊँगा", "िऊँगा", "ूँगा"]},
+      {"slot": "FUT_1SG_F",  "tags": ["FIN", "FUT", "IND", "1", "FEM", "SG"],  "label": "future 1sg fem",           "surface": ["ूँगी", "ऊँगी", "िऊँगी", "ूँगी"]},
+      {"slot": "FUT_2SG_M",  "tags": ["FIN", "FUT", "IND", "2", "MASC", "SG"], "label": "future 2sg masc",          "surface": ["ेगा", "एगा", "िएगा", "ेगा"]},
+      {"slot": "FUT_3SG_M",  "tags": ["FIN", "FUT", "IND", "3", "MASC", "SG"], "label": "future 3sg masc",          "surface": ["ेगा", "एगा", "िएगा", "ेगा"]},
+      {"slot": "FUT_2SG_F",  "tags": ["FIN", "FUT", "IND", "2", "FEM", "SG"],  "label": "future 2sg fem",           "surface": ["ेगी", "एगी", "िएगी", "ेगी"]},
+      {"slot": "FUT_3SG_F",  "tags": ["FIN", "FUT", "IND", "3", "FEM", "SG"],  "label": "future 3sg fem",           "surface": ["ेगी", "एगी", "िएगी", "ेगी"]},
+      {"slot": "FUT_1PL_M",  "tags": ["FIN", "FUT", "IND", "1", "MASC", "PL"], "label": "future 1pl masc",          "surface": ["ेंगे", "एँगे", "िएँगे", "ेंगे"]},
+      {"slot": "FUT_2PL_M_HON","tags": ["FIN", "FUT", "IND", "2", "MASC", "PL"], "label": "future 2pl masc honorific (आप)", "surface": ["ेंगे", "एँगे", "िएँगे", "ेंगे"]},
+      {"slot": "FUT_3PL_M",  "tags": ["FIN", "FUT", "IND", "3", "MASC", "PL"], "label": "future 3pl masc",          "surface": ["ेंगे", "एँगे", "िएँगे", "ेंगे"]},
+      {"slot": "FUT_1PL_F",  "tags": ["FIN", "FUT", "IND", "1", "FEM", "PL"],  "label": "future 1pl fem",           "surface": ["ेंगी", "एँगी", "िएँगी", "ेंगी"]},
+      {"slot": "FUT_2PL_F_HON","tags": ["FIN", "FUT", "IND", "2", "FEM", "PL"], "label": "future 2pl fem honorific (आप)", "surface": ["ेंगी", "एँगी", "िएँगी", "ेंगी"]},
+      {"slot": "FUT_3PL_F",  "tags": ["FIN", "FUT", "IND", "3", "FEM", "PL"],  "label": "future 3pl fem",           "surface": ["ेंगी", "एँगी", "िएँगी", "ेंगी"]},
+      {"slot": "FUT_2PL_M",  "tags": ["FIN", "FUT", "IND", "2", "MASC", "PL"], "label": "future 2pl masc familiar (तुम)", "surface": ["ोगे", "ओगे", "ियोगे", "ोगे"]},
+      {"slot": "FUT_2PL_F",  "tags": ["FIN", "FUT", "IND", "2", "FEM", "PL"],  "label": "future 2pl fem familiar (तुम)",  "surface": ["ोगी", "ओगी", "ियोगी", "ोगी"]}
+    ]
+  }
+}

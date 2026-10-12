@@ -1,0 +1,4 @@
+﻿Analyzer,Items,Exact matches,Errors,Unknown,Accuracy,Precision,Recall,F1,Lemma accuracy,Lemma F1,Analysis-set P,Analysis-set R,Analysis-set F1,Feature P,Feature R,Feature F1
+Rule-based,366,352,14,4,0.961749,0.972376,0.961749,0.967033,0.964481,0.96978,0.906198,0.95922,0.931955,0.986261,0.977626,0.981925
+FST,366,326,40,40,0.89071,1.0,0.89071,0.942197,0.89071,0.942197,1.0,0.89539,0.944808,1.0,0.898297,0.946424
+Rule-based (no guesser),366,326,40,40,0.89071,1.0,0.89071,0.942197,0.89071,0.942197,1.0,0.89539,0.944808,1.0,0.898297,0.946424

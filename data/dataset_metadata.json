@@ -1,0 +1,141 @@
+{
+  "provenance": {
+    "name": "Hindi inflectional morphology gold standard (project-curated)",
+    "source_type": "manual",
+    "source_description": "All gold-standard items, the lexicon and the paradigm rules were manually curated for this project. No external corpus or dataset was used, and none of the examples is claimed to come from a public corpus.",
+    "annotation_process": "Word forms were chosen to cover each implemented paradigm, irregular forms, lexical ambiguity, spelling variants, unknown (out-of-lexicon) lemmas and deliberately out-of-scope morphology. Each word was annotated context-free with ALL analyses that the annotation scheme allows, based on standard descriptions of Hindi inflection. The annotations were drafted with AI assistance (Claude) and should be reviewed by a fluent Hindi speaker before being used for anything beyond coursework.",
+    "annotation_source_file": "data/annotations/gold_annotations.txt",
+    "generated_file": "data/gold_standard.json (built by scripts/build_gold.py)",
+    "created": "2026-10-11",
+    "license": "Created for this project; no third-party licence applies. Reuse is governed by whatever licence the project author chooses for the repository.",
+    "external_datasets_considered": [
+      {
+        "name": "Universal Dependencies Hindi treebank (UD_Hindi-HDTB)",
+        "url": "https://github.com/UniversalDependencies/UD_Hindi-HDTB",
+        "used": false,
+        "reason": "Not accessed in this project. Treebank annotations are single in-context analyses with a different feature inventory, so using them would require a separate conversion step and an evaluation policy for context-dependent ambiguity. Check the repository's licence before any future use."
+      }
+    ]
+  },
+  "annotation_schema": {
+    "item_fields": {
+      "id": "Stable item id (G001...).",
+      "word": "Surface form as written (may contain spelling variants; normalised before analysis).",
+      "split": "dev or test.",
+      "category": "Coverage category (see categories).",
+      "group": "Lemma group used for the split (items sharing a lemma share a group).",
+      "source": "Always 'manual' in this version.",
+      "note": "Optional annotator note.",
+      "analyses": "List of ALL valid canonical analyses for the isolated word."
+    },
+    "analysis_fields": {
+      "lemma": "Citation form.",
+      "pos": "NOUN | PRON | ADJ | VERB | AUX",
+      "verbform": "INF | PART | FIN | CONV | NA",
+      "tense": "PRES | PAST | FUT | NA",
+      "aspect": "HAB | PERF | NA",
+      "mood": "IND | SUBJ | IMP | NA",
+      "person": "1 | 2 | 3 | NA",
+      "gender": "MASC | FEM | NA",
+      "number": "SG | PL | NA",
+      "case": "DIR | OBL | ACC_DAT | VOC | NA"
+    },
+    "not_applicable": "NA marks a feature that the word class does not carry (e.g. tense on nouns, agreement on invariant adjectives).",
+    "categories": {
+      "noun_regular": "Productive noun classes.",
+      "noun_irregular": "Exception and stem-change noun classes.",
+      "pronoun": "Suppletive personal pronouns.",
+      "adjective": "Inflecting and invariant adjectives.",
+      "verb_regular": "Regular verb forms.",
+      "verb_irregular": "Suppletive / stem-changing verb forms.",
+      "lexical_ambiguity": "Forms belonging to two different lemmas.",
+      "spelling_variant": "Common non-canonical spellings (tests normalisation). Several of these normalise to a form that is also in the dataset in canonical spelling.",
+      "oov": "In-scope inflection of lemmas absent from the lexicon.",
+      "out_of_scope": "Morphology not implemented by design (derivation, vocative, conjunctive participle, colloquial forms)."
+    }
+  },
+  "statistics": {
+    "items": 366,
+    "analyses": 564,
+    "ambiguous_items": 129,
+    "by_split": {
+      "dev": 170,
+      "test": 196
+    },
+    "by_category": {
+      "noun_regular": {
+        "dev": 30,
+        "test": 46
+      },
+      "noun_irregular": {
+        "dev": 17,
+        "test": 11
+      },
+      "pronoun": {
+        "dev": 9,
+        "test": 12
+      },
+      "adjective": {
+        "dev": 11,
+        "test": 12
+      },
+      "verb_regular": {
+        "dev": 53,
+        "test": 56
+      },
+      "verb_irregular": {
+        "dev": 25,
+        "test": 26
+      },
+      "lexical_ambiguity": {
+        "dev": 4,
+        "test": 5
+      },
+      "spelling_variant": {
+        "dev": 2,
+        "test": 8
+      },
+      "oov": {
+        "dev": 17,
+        "test": 12
+      },
+      "out_of_scope": {
+        "dev": 2,
+        "test": 8
+      }
+    },
+    "lemma_groups": {
+      "dev": 72,
+      "test": 84
+    },
+    "group_overlap_between_splits": [],
+    "items_sharing_normalized_form": 8
+  },
+  "split": {
+    "method": "lemma-grouped deterministic hash split",
+    "details": "Items that share any lemma are merged into one group (union-find). Each group is assigned to 'dev' if sha1('hindi-morph-split-v1:' + group) / 2^32 < 0.4, else 'test'. No lemma group occurs in both splits.",
+    "seed": "hindi-morph-split-v1",
+    "dev_fraction_target": 0.4,
+    "built_on": "2026-10-11"
+  },
+  "annotation_corrections": [
+    {
+      "id": "C1",
+      "word": "गायें",
+      "date": "2026-10-11",
+      "found": "during the single held-out TEST evaluation",
+      "before": [
+        "गाय NOUN FEM PL DIR"
+      ],
+      "after": [
+        "गाय NOUN FEM PL DIR",
+        "गाना VERB FIN SUBJ 1 PL",
+        "गाना VERB FIN SUBJ 2 PL",
+        "गाना VERB FIN SUBJ 3 PL"
+      ],
+      "reason": "The scheme treats ये/ए as spelling variants (normalisation folds गायें -> गाएं), so गायें is also a valid spelling of the subjunctive गाएँ. The original annotation was incomplete under the project's own convention.",
+      "effect": "Both analyzers' top-1 prediction (गाना SUBJ 1 PL) becomes correct: +1 test item for each analyzer, so the comparison between them is unchanged. Both analyzers still MISS the noun reading because y-glide folding merges गायें with गाएं; this remains visible as an analysis-set recall error and is listed as a limitation. No analyzer code or rule was changed after the test run.",
+      "split_effect": "None: the merged lemma group (गाना+गाय) was already entirely in the test split."
+    }
+  ]
+}

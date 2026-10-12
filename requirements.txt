@@ -1,0 +1,7 @@
+# Tested with Python 3.11.9 on Windows 11
+streamlit==1.65.0
+pandas==3.0.6
+numpy==2.4.6
+scikit-learn==1.9.1
+plotly==7.1.0
+pytest==9.1.1

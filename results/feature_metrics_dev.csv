@@ -1,0 +1,31 @@
+﻿Analyzer,Feature,Precision,Recall,F1,Support,TP,FP,FN
+Rule-based,lemma,0.976331,0.970588,0.973451,170,165,4,5
+Rule-based,pos,0.982249,0.976471,0.979351,170,166,3,4
+Rule-based,verbform,0.988889,0.978022,0.983425,91,89,1,2
+Rule-based,tense,1.0,1.0,1.0,26,26,0,0
+Rule-based,aspect,1.0,0.976744,0.988235,43,42,0,1
+Rule-based,mood,0.97561,1.0,0.987654,40,40,1,0
+Rule-based,person,0.978261,1.0,0.989011,45,45,1,0
+Rule-based,gender,1.0,0.992537,0.996255,134,133,0,1
+Rule-based,number,1.0,1.0,1.0,160,160,0,0
+Rule-based,case,0.988095,0.988095,0.988095,84,83,1,1
+FST,lemma,1.0,0.888235,0.94081,170,151,0,19
+FST,pos,1.0,0.888235,0.94081,170,151,0,19
+FST,verbform,1.0,0.912088,0.954023,91,83,0,8
+FST,tense,1.0,0.961538,0.980392,26,25,0,1
+FST,aspect,1.0,0.930233,0.963855,43,40,0,3
+FST,mood,1.0,0.95,0.974359,40,38,0,2
+FST,person,1.0,0.955556,0.977273,45,43,0,2
+FST,gender,1.0,0.88806,0.940711,134,119,0,15
+FST,number,1.0,0.9,0.947368,160,144,0,16
+FST,case,1.0,0.845238,0.916129,84,71,0,13
+Rule-based (no guesser),lemma,1.0,0.888235,0.94081,170,151,0,19
+Rule-based (no guesser),pos,1.0,0.888235,0.94081,170,151,0,19
+Rule-based (no guesser),verbform,1.0,0.912088,0.954023,91,83,0,8
+Rule-based (no guesser),tense,1.0,0.961538,0.980392,26,25,0,1
+Rule-based (no guesser),aspect,1.0,0.930233,0.963855,43,40,0,3
+Rule-based (no guesser),mood,1.0,0.95,0.974359,40,38,0,2
+Rule-based (no guesser),person,1.0,0.955556,0.977273,45,43,0,2
+Rule-based (no guesser),gender,1.0,0.88806,0.940711,134,119,0,15
+Rule-based (no guesser),number,1.0,0.9,0.947368,160,144,0,16
+Rule-based (no guesser),case,1.0,0.845238,0.916129,84,71,0,13
